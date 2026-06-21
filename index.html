@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Toni am Mic – Der Podcast | Das echte Leben. Ungeschminkt.</title>
+<meta name="description" content="Toni am Mic – ein deutschsprachiger Podcast. Das echte Leben. Ungeschminkt. Neue Folgen, die Zeitkapsel und mehr." />
+
+<!-- =====================================================================
+     GOOGLE FONTS – Poppins (Headlines & Text/Navigation)
+     ===================================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* =====================================================================
+   DESIGN-TOKENS (Farbpalette Dark Neon)
+   -> Hier zentral die Farben ändern, falls gewünscht.
+   ===================================================================== */
+:root{
+  --bg-1:#0e1016;           /* sehr dunkles Anthrazit/Navy */
+  --bg-2:#161922;           /* etwas helleres Dunkel */
+  --bg-card:#13161f;        /* Kartenhintergrund */
+  --bg-card-2:#1a1e2b;      /* Karten-Verlauf hell */
+
+  --orange:#ff8a1e;         /* Orange-Neon (Akzente) */
+  --cyan:#25d3ff;           /* Cyan-Neon (Spotify, Akzente) */
+  --yellow:#ffe11a;         /* Gelb-Neon (aktiver Menüpunkt, Neue Folge) */
+
+  --text:#f3f4f6;           /* Weiß / Haupttext */
+  --text-dim:#9aa0ae;       /* gedämpftes Grau (Sekundärtext) */
+
+  --maxw:1180px;            /* maximale Inhaltsbreite */
+  --radius:18px;            /* Standard-Rundung */
+}
+
+/* =====================================================================
+   RESET / GRUNDLAGEN
+   ===================================================================== */
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+
+html{ scroll-behavior:smooth; }   /* Smooth-Scroll für Anker-Links */
+
+body{
+  font-family:'Poppins', system-ui, -apple-system, sans-serif;
+  color:var(--text);
+  background:var(--bg-1);
+  /* dezente, dunkle Neon-Atmosphäre im Hintergrund */
+  background-image:
+    radial-gradient(1100px 600px at 15% -10%, rgba(37,211,255,0.10), transparent 60%),
+    radial-gradient(900px 600px at 95% 0%, rgba(255,138,30,0.08), transparent 55%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-2) 100%);
+  background-attachment:fixed;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+ul{ list-style:none; }
+
+.container{
+  width:100%;
+  max-width:var(--maxw);
+  margin-inline:auto;
+  padding-inline:clamp(18px, 5vw, 40px);
+}
+
+/* =====================================================================
+   NEON-GLOW UTILITIES
+   ===================================================================== */
+.glow-yellow{
+  color:var(--yellow);
+  text-shadow:
+    0 0 4px rgba(255,225,26,0.9),
+    0 0 12px rgba(255,225,26,0.6),
+    0 0 26px rgba(255,225,26,0.35);
+}
+.glow-cyan{
+  color:var(--cyan);
+  text-shadow:
+    0 0 4px rgba(37,211,255,0.9),
+    0 0 12px rgba(37,211,255,0.55),
+    0 0 26px rgba(37,211,255,0.3);
+}
+.glow-orange{
+  color:var(--orange);
+  text-shadow:
+    0 0 4px rgba(255,138,30,0.9),
+    0 0 12px rgba(255,138,30,0.55),
+    0 0 26px rgba(255,138,30,0.3);
+}
+
+/* =====================================================================
+   1) NAVBAR (sticky, transparent/dunkel)
+   ===================================================================== */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:rgba(14,16,22,0.72);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.nav-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  padding-block:14px;
+}
+
+/* Logo klein in der Navbar */
+.nav-logo img{
+  height:46px;
+  width:auto;
+  filter:drop-shadow(0 0 8px rgba(37,211,255,0.35));
+  transition:filter .3s ease, transform .3s ease;
+}
+.nav-logo:hover img{
+  filter:drop-shadow(0 0 14px rgba(37,211,255,0.6));
+  transform:translateY(-1px);
+}
+
+/* Menü */
+.nav-menu{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.nav-menu a{
+  position:relative;
+  font-size:0.84rem;
+  font-weight:600;
+  letter-spacing:0.06em;
+  text-transform:uppercase;       /* Großbuchstaben */
+  color:var(--text-dim);
+  padding:8px 6px;
+  transition:color .25s ease, text-shadow .25s ease;
+}
+.nav-menu a:hover{ color:var(--text); }
+
+/* Trennstriche zwischen den Menüpunkten */
+.nav-menu li:not(:last-child)::after{
+  content:"|";
+  color:rgba(255,255,255,0.18);
+  margin-left:8px;
+}
+.nav-menu li{ display:flex; align-items:center; }
+
+/* Aktiver Menüpunkt "START" – leuchtet gelb */
+.nav-menu a.active{
+  color:var(--yellow);
+  text-shadow:
+    0 0 4px rgba(255,225,26,0.9),
+    0 0 12px rgba(255,225,26,0.55),
+    0 0 22px rgba(255,225,26,0.3);
+}
+
+/* Hamburger (nur Mobile sichtbar) */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:0;
+  cursor:pointer;
+  padding:8px;
+  flex-direction:column;
+  gap:5px;
+}
+.nav-toggle span{
+  display:block;
+  width:26px;
+  height:2px;
+  border-radius:2px;
+  background:var(--text);
+  box-shadow:0 0 8px rgba(37,211,255,0.5);
+  transition:transform .3s ease, opacity .3s ease;
+}
+/* Hamburger -> X wenn geöffnet */
+.nav-toggle.open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2){ opacity:0; }
+.nav-toggle.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+/* =====================================================================
+   BUTTONS (Neon-Outline-Style)
+   ===================================================================== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-family:inherit;
+  font-size:0.95rem;
+  font-weight:600;
+  letter-spacing:0.02em;
+  padding:14px 26px;
+  border-radius:999px;
+  background:transparent;            /* transparenter Hintergrund */
+  cursor:pointer;
+  transition:box-shadow .3s ease, transform .3s ease, background .3s ease;
+}
+.btn svg{ width:20px; height:20px; flex:none; }
+
+/* Gelber Neon-Button ("Neue Folge") */
+.btn-yellow{
+  color:var(--yellow);
+  border:2px solid var(--yellow);
+  box-shadow:
+    0 0 6px rgba(255,225,26,0.5),
+    inset 0 0 6px rgba(255,225,26,0.2);
+}
+.btn-yellow:hover{
+  background:rgba(255,225,26,0.08);
+  box-shadow:
+    0 0 14px rgba(255,225,26,0.75),
+    0 0 30px rgba(255,225,26,0.45),
+    inset 0 0 12px rgba(255,225,26,0.3);
+  transform:translateY(-2px);
+}
+
+/* Cyan Neon-Button ("Auf Spotify hören") */
+.btn-cyan{
+  color:var(--cyan);
+  border:2px solid var(--cyan);
+  box-shadow:
+    0 0 6px rgba(37,211,255,0.5),
+    inset 0 0 6px rgba(37,211,255,0.2);
+}
+.btn-cyan:hover{
+  background:rgba(37,211,255,0.08);
+  box-shadow:
+    0 0 14px rgba(37,211,255,0.75),
+    0 0 30px rgba(37,211,255,0.45),
+    inset 0 0 12px rgba(37,211,255,0.3);
+  transform:translateY(-2px);
+}
+
+/* =====================================================================
+   2) HERO
+   ===================================================================== */
+.hero{
+  position:relative;
+  text-align:center;
+  padding-block:clamp(56px, 9vw, 110px);
+  overflow:hidden;
+}
+
+/* dezenter Glow-/Rauch-Effekt hinter dem Logo (radialer Verlauf, Cyan) */
+.hero-glow{
+  position:absolute;
+  top:42%;
+  left:50%;
+  width:min(820px, 90vw);
+  height:min(820px, 90vw);
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(circle, rgba(37,211,255,0.22) 0%, rgba(37,211,255,0.10) 35%, transparent 65%);
+  filter:blur(20px);
+  z-index:0;
+  pointer-events:none;
+  animation:smoke 9s ease-in-out infinite alternate;
+}
+@keyframes smoke{
+  0%  { opacity:.75; transform:translate(-50%,-50%) scale(1); }
+  100%{ opacity:1;   transform:translate(-50%,-52%) scale(1.08); }
+}
+
+.hero-content{ position:relative; z-index:1; }
+
+/* Großes Logo-Bild zentriert */
+.hero-logo{
+  width:min(560px, 82vw);
+  margin:0 auto 26px;
+  filter:drop-shadow(0 0 26px rgba(37,211,255,0.35));
+}
+
+/* Tagline */
+.hero-tagline{
+  font-size:clamp(1.3rem, 3.6vw, 2.1rem);
+  font-weight:700;
+  color:var(--text);
+  letter-spacing:0.01em;
+  margin-bottom:34px;
+}
+
+/* Button-Reihe */
+.hero-buttons{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:18px;
+}
+
+/* =====================================================================
+   SECTION-GRUNDLAGEN
+   ===================================================================== */
+.section{ padding-block:clamp(48px, 8vw, 84px); }
+
+.section-title{
+  font-size:clamp(1.5rem, 4vw, 2.2rem);
+  font-weight:800;
+  text-align:left;
+  margin-bottom:34px;
+}
+
+/* =====================================================================
+   3) FOLGEN-SEKTION ("Zuletzt am Mic:")
+   ===================================================================== */
+.episode-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);  /* 3 Spalten Desktop */
+  gap:26px;
+}
+
+.episode-card{
+  background:linear-gradient(160deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:var(--radius);
+  overflow:hidden;
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.episode-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(37,211,255,0.4);
+  box-shadow:0 10px 40px rgba(0,0,0,0.5), 0 0 24px rgba(37,211,255,0.18);
+}
+
+/* Thumbnail-Platzhalter (16:9) ----------------------------------------
+   >>> PLATZHALTER: Hier später eigenes Bild als background-image setzen,
+   z.B.: background:url('thumb-folge-03.jpg') center/cover;            */
+.thumb{
+  position:relative;
+  aspect-ratio:16 / 9;
+  background:linear-gradient(135deg, #1d2433 0%, #2a1c2e 100%);
+}
+/* unterschiedliche Platzhalter-Verläufe pro Karte (austauschbar) */
+.thumb--01{ background:linear-gradient(135deg,#172a3a 0%, #103043 60%, #0f2230 100%); }
+.thumb--02{ background:linear-gradient(135deg,#2a1f3a 0%, #3a1f33 60%, #241430 100%); }
+.thumb--03{ background:linear-gradient(135deg,#2c2412 0%, #3a2a14 60%, #1f1a10 100%); }
+
+/* Play-Button-Overlay (Kreis + Dreieck, Glow) */
+.play-btn{
+  position:absolute;
+  top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  width:64px; height:64px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(14,16,22,0.55);
+  border:2px solid var(--cyan);
+  box-shadow:0 0 14px rgba(37,211,255,0.6), inset 0 0 10px rgba(37,211,255,0.25);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.episode-card:hover .play-btn{
+  transform:translate(-50%,-50%) scale(1.08);
+  box-shadow:0 0 24px rgba(37,211,255,0.85), inset 0 0 14px rgba(37,211,255,0.35);
+}
+.play-btn svg{ width:26px; height:26px; margin-left:3px; fill:var(--cyan);
+  filter:drop-shadow(0 0 6px rgba(37,211,255,0.7)); }
+
+.episode-body{ padding:18px 20px 22px; }
+.episode-eyebrow{
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--orange);
+  text-shadow:0 0 8px rgba(255,138,30,0.4);
+  margin-bottom:6px;
+}
+.episode-title{
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--text);
+  line-height:1.35;
+}
+
+/* =====================================================================
+   4) FEATURE-BANNER ("Concept: Die Zeitkapsel")
+   ===================================================================== */
+.capsule{
+  position:relative;
+  border-radius:24px;
+  overflow:hidden;
+  padding:clamp(34px, 6vw, 72px);
+  /* dunkler Hintergrund mit dezentem Vintage-Platzhalter-Verlauf
+     (Taschenuhr + Mikrofon-Vibe angedeutet)
+     >>> PLATZHALTER: hier später ein Vintage-Foto als background setzen */
+  background:
+    radial-gradient(600px 300px at 85% 20%, rgba(255,138,30,0.18), transparent 60%),
+    radial-gradient(500px 400px at 10% 90%, rgba(37,211,255,0.14), transparent 60%),
+    linear-gradient(135deg, #14121a 0%, #1a1622 50%, #101620 100%);
+  border:1px solid rgba(255,255,255,0.07);
+  box-shadow:0 0 40px rgba(0,0,0,0.4);
+}
+/* angedeutete Taschenuhr-/Mikrofon-Lichtkreise (rein dekorativ) */
+.capsule::before{
+  content:"";
+  position:absolute;
+  right:-60px; top:50%;
+  transform:translateY(-50%);
+  width:320px; height:320px;
+  border-radius:50%;
+  border:2px solid rgba(255,138,30,0.18);
+  box-shadow:0 0 60px rgba(255,138,30,0.12), inset 0 0 40px rgba(255,138,30,0.08);
+  pointer-events:none;
+}
+.capsule-content{ position:relative; z-index:1; max-width:560px; }
+.capsule h2{
+  font-size:clamp(1.5rem, 4vw, 2.3rem);
+  font-weight:800;
+  margin-bottom:16px;
+}
+.capsule p{
+  color:var(--text-dim);
+  font-size:1.02rem;
+  margin-bottom:22px;
+}
+/* Neon-Link "Mehr erfahren" */
+.neon-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  font-weight:600;
+  color:var(--orange);
+  text-shadow:0 0 8px rgba(255,138,30,0.5);
+  transition:gap .25s ease, text-shadow .25s ease;
+}
+.neon-link:hover{
+  gap:14px;
+  text-shadow:0 0 14px rgba(255,138,30,0.85), 0 0 26px rgba(255,138,30,0.4);
+}
+
+/* =====================================================================
+   5) FOOTER
+   ===================================================================== */
+.footer{
+  border-top:1px solid rgba(255,255,255,0.06);
+  padding-block:36px;
+  margin-top:20px;
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.footer-logo img{
+  height:38px;
+  width:auto;
+  filter:drop-shadow(0 0 8px rgba(37,211,255,0.35));
+}
+.footer-copy{ color:var(--text-dim); font-size:0.88rem; }
+
+.social-links{ display:flex; gap:14px; }
+.social-links a{
+  width:40px; height:40px;
+  display:grid; place-items:center;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--text-dim);
+  transition:color .3s ease, border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+.social-links a:hover{
+  color:var(--cyan);
+  border-color:var(--cyan);
+  box-shadow:0 0 14px rgba(37,211,255,0.45);
+  transform:translateY(-2px);
+}
+.social-links svg{ width:18px; height:18px; fill:currentColor; }
+
+/* =====================================================================
+   GLOW-PULSIEREN (dezent) für aktive Neon-Elemente
+   ===================================================================== */
+@keyframes pulse-yellow{
+  0%,100%{ text-shadow:0 0 4px rgba(255,225,26,0.9), 0 0 12px rgba(255,225,26,0.5), 0 0 22px rgba(255,225,26,0.28); }
+  50%    { text-shadow:0 0 6px rgba(255,225,26,1),   0 0 18px rgba(255,225,26,0.7), 0 0 32px rgba(255,225,26,0.4); }
+}
+.nav-menu a.active{ animation:pulse-yellow 3.2s ease-in-out infinite; }
+
+/* =====================================================================
+   RESPONSIVE (Mobile-First Anpassungen)
+   ===================================================================== */
+@media (max-width: 860px){
+  /* Hamburger anzeigen */
+  .nav-toggle{ display:flex; }
+
+  /* Menü als Overlay-Dropdown */
+  .nav-menu{
+    position:absolute;
+    top:100%; left:0; right:0;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    background:rgba(14,16,22,0.97);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.07);
+    padding:8px 0 16px;
+    /* standardmäßig geschlossen */
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+  }
+  .nav-menu.open{ max-height:340px; }
+  .nav-menu a{
+    padding:14px 24px;
+    font-size:0.95rem;
+  }
+  /* keine Trennstriche auf Mobile */
+  .nav-menu li:not(:last-child)::after{ content:none; }
+  .nav-menu li{ border-bottom:1px solid rgba(255,255,255,0.04); }
+
+  /* Episoden -> 1 Spalte */
+  .episode-grid{ grid-template-columns:1fr; }
+
+  /* Hero-Buttons untereinander zentriert */
+  .hero-buttons .btn{ width:100%; max-width:300px; justify-content:center; }
+}
+
+@media (min-width: 520px) and (max-width: 860px){
+  .episode-grid{ grid-template-columns:repeat(2, 1fr); }
+}
+
+/* Bewegungsreduktion respektieren */
+@media (prefers-reduced-motion: reduce){
+  *{ animation:none !important; scroll-behavior:auto; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================================
+     1) NAVBAR
+     ===================================================================== -->
+<header class="navbar">
+  <nav class="container nav-inner" aria-label="Hauptnavigation">
+
+    <!-- Logo klein (Bilddatei logo.png) -->
+    <a href="#start" class="nav-logo" aria-label="Toni am Mic – zur Startseite">
+      <img src="logo.png" alt="Toni am Mic Logo" />
+    </a>
+
+    <!-- Hamburger-Button (nur Mobile) -->
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navMenu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Menü -->
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#start" class="active">START</a></li>
+      <li><a href="#folgen">FOLGEN</a></li>
+      <li><a href="#zeitkapsel">ZEITKAPSEL</a></li>
+      <li><a href="#ueber">ÜBER TONI</a></li>
+      <li><a href="#kontakt">KONTAKT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===================================================================
+       2) HERO
+       =================================================================== -->
+  <section class="hero" id="start">
+    <!-- dezenter Glow-/Rauch-Effekt hinter dem Logo -->
+    <div class="hero-glow" aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <!-- Großes Logo-Bild (Bilddatei logo.png) -->
+      <img class="hero-logo" src="logo.png" alt="Toni am Mic – der Podcast" />
+
+      <!-- Tagline -->
+      <p class="hero-tagline">Das echte Leben. Ungeschminkt.</p>
+
+      <!-- Zwei Neon-Outline-Buttons -->
+      <div class="hero-buttons">
+
+        <!-- "Neue Folge" – gelber Neon-Rand, Film-/Klappen-Icon -->
+        <a href="#folgen" class="btn btn-yellow">
+          <!-- Inline-SVG: Filmklappe -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8h18v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8Z"/>
+            <path d="M3 8 5 4h3l-1.6 3.2M9 8l1.6-4h3L12 7.2M15 8l1.6-4h3L18 7.2"/>
+          </svg>
+          Neue Folge
+        </a>
+
+        <!-- "Auf Spotify hören" – cyan Neon-Rand, Spotify-Icon -->
+        <a href="#kontakt" class="btn btn-cyan">
+          <!-- Inline-SVG: Spotify -->
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.59 14.43a.62.62 0 0 1-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 1 1-.28-1.22c3.81-.87 7.08-.5 9.72 1.11.3.18.39.57.21.86Zm1.23-2.74a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.37.23.49.71.25 1.07Zm.11-2.85C14.6 8.98 9.4 8.8 6.3 9.74a.93.93 0 1 1-.54-1.78c3.56-1.08 9.3-.87 12.96 1.3a.93.93 0 1 1-.95 1.6Z"/>
+          </svg>
+          Auf Spotify hören
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       3) FOLGEN-SEKTION – "Zuletzt am Mic:"
+       =================================================================== -->
+  <section class="section container" id="folgen">
+    <h2 class="section-title">Zuletzt am Mic:</h2>
+
+    <div class="episode-grid">
+
+      <!-- ===== Karte: Folge 03 ===== -->
+      <article class="episode-card">
+        <a href="#" aria-label="Folge 03 abspielen: 3D-Druck im Alltag">
+          <!-- PLATZHALTER-Thumbnail (eigenes Bild via .thumb background ersetzen) -->
+          <div class="thumb thumb--03">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
+        </a>
+        <div class="episode-body">
+          <p class="episode-eyebrow">Neue Folge</p>
+          <h3 class="episode-title">Folge 03: 3D-Druck im Alltag</h3>
+        </div>
+      </article>
+
+      <!-- ===== Karte: Folge 02 ===== -->
+      <article class="episode-card">
+        <a href="#" aria-label="Folge 02 abspielen: 90er Musik &amp; Nostalgie">
+          <!-- PLATZHALTER-Thumbnail -->
+          <div class="thumb thumb--02">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
+        </a>
+        <div class="episode-body">
+          <p class="episode-eyebrow">Folge</p>
+          <h3 class="episode-title">Folge 02: 90er Musik &amp; Nostalgie</h3>
+        </div>
+      </article>
+
+      <!-- ===== Karte: Folge 01 ===== -->
+      <article class="episode-card">
+        <a href="#" aria-label="Folge 01 abspielen: Pilot – Toni packt aus">
+          <!-- PLATZHALTER-Thumbnail -->
+          <div class="thumb thumb--01">
+            <span class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </div>
+        </a>
+        <div class="episode-body">
+          <p class="episode-eyebrow">Pilot</p>
+          <h3 class="episode-title">Folge 01: Pilot: Toni packt aus</h3>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       4) FEATURE-BANNER – "Concept: Die Zeitkapsel"
+       =================================================================== -->
+  <section class="section container" id="zeitkapsel">
+    <div class="capsule">
+      <div class="capsule-content">
+        <h2>Concept: <span class="glow-orange">Die Zeitkapsel</span></h2>
+        <!-- PLATZHALTER-Text: hier eigenen Beschreibungstext einsetzen -->
+        <p>
+          In jeder Folge öffnet Toni eine kleine Zeitkapsel: ein Moment, ein
+          Gegenstand oder ein Song, der eine Geschichte erzählt. Echte
+          Erinnerungen, ehrlich erzählt – direkt am Mic.
+        </p>
+        <a href="#" class="neon-link">
+          Mehr erfahren
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- =====================================================================
+     5) FOOTER
+     ===================================================================== -->
+<footer class="footer" id="kontakt">
+  <div class="container footer-inner">
+
+    <!-- Mini-Logo -->
+    <a href="#start" class="footer-logo" aria-label="Toni am Mic – nach oben">
+      <img src="logo.png" alt="Toni am Mic Logo" />
+    </a>
+
+    <!-- Copyright -->
+    <p class="footer-copy">© 2026 Toni am Mic</p>
+
+    <!-- Social-Links als Icons -->
+    <div class="social-links" aria-label="Social Media">
+      <!-- Spotify -->
+      <a href="#" aria-label="Toni am Mic auf Spotify">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.59 14.43a.62.62 0 0 1-.86.21c-2.35-1.44-5.3-1.76-8.79-.96a.62.62 0 1 1-.28-1.22c3.81-.87 7.08-.5 9.72 1.11.3.18.39.57.21.86Zm1.23-2.74a.78.78 0 0 1-1.07.26c-2.69-1.65-6.79-2.13-9.97-1.17a.78.78 0 1 1-.45-1.49c3.63-1.1 8.15-.56 11.24 1.33.37.23.49.71.25 1.07Zm.11-2.85C14.6 8.98 9.4 8.8 6.3 9.74a.93.93 0 1 1-.54-1.78c3.56-1.08 9.3-.87 12.96 1.3a.93.93 0 1 1-.95 1.6Z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="#" aria-label="Toni am Mic auf Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.58 2.2 15.2 2.2 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.21 8.8 2.2 12 2.2Zm0 1.8c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17C2.41 10.5 2.4 10.85 2.4 14s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74M12 7.1a4.9 4.9 0 1 0 0 9.8 4.9 4.9 0 0 0 0-9.8Zm0 8.08a3.18 3.18 0 1 1 0-6.36 3.18 3.18 0 0 1 0 6.36Zm6.24-8.28a1.14 1.14 0 1 1-2.28 0 1.14 1.14 0 0 1 2.28 0Z"/></svg>
+      </a>
+      <!-- E-Mail -->
+      <a href="mailto:hallo@toniammic.de" aria-label="Toni am Mic per E-Mail kontaktieren">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- =====================================================================
+     JAVASCRIPT
+     ===================================================================== -->
+<script>
+/* ---- Hamburger-Menü auf Mobile öffnen/schließen ---- */
+(function(){
+  const toggle = document.getElementById('navToggle');
+  const menu   = document.getElementById('navMenu');
+
+  toggle.addEventListener('click', function(){
+    const isOpen = menu.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Menü schließen' : 'Menü öffnen');
+  });
+
+  /* ---- Menü nach Klick auf einen Link schließen (Mobile) ---- */
+  menu.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      menu.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.setAttribute('aria-label','Menü öffnen');
+
+      /* aktiven Menüpunkt (gelb) umsetzen */
+      menu.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
