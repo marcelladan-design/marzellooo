@@ -341,6 +341,35 @@
   .jobs-note { margin-top: 28px; font-family: var(--font-mono); font-size: .85rem; color: var(--ink-soft); }
   .jobs-note a { color: var(--steel); text-decoration: underline; text-underline-offset: 3px; }
 
+  /* Photo-background sections */
+  .photo-section { position: relative; isolation: isolate; background-size: cover; background-position: center;
+    background-color: #0b1015; border-block: 1px solid rgba(255,255,255,0.10); }
+  .photo-section .tag { color: #7cc4ef; }
+  .photo-section .tag::before { background: #7cc4ef; }
+  .photo-section .tag.brass { color: #e6b366; }
+  .photo-section .tag.brass::before { background: #e6b366; }
+  .photo-section h2, .photo-section h3, .photo-section h4 { color: #fff; }
+  .photo-section .sec-head p,
+  .photo-section .mat-copy p,
+  .photo-section .tl-body p,
+  .photo-section .q-item .qd p { color: rgba(255,255,255,0.82); }
+  .photo-section .mat-wrap { grid-template-columns: 1fr; }
+  .photo-section .mat-copy { max-width: 62ch; }
+  .photo-section .chip { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.28); color: #fff; }
+  .photo-section .chip .code { color: #e6b366; }
+  .photo-section .chip:hover { border-color: #e6b366; transform: translateY(-2px); }
+  .photo-section .tl-row { border-color: rgba(255,255,255,0.16); }
+  .photo-section .tl-year { color: #7cc4ef; }
+  .photo-section .tl-tag { color: #e6b366; }
+  .photo-section .q-grid { grid-template-columns: 1fr; }
+  .photo-section .q-list { max-width: 680px; }
+  .photo-section .q-item { border-color: rgba(255,255,255,0.16); }
+  .photo-section .q-item .qv { color: #7cc4ef; }
+
+  #werkstoffe.photo-section { background-image: linear-gradient(90deg, rgba(8,12,17,0.94) 0%, rgba(8,12,17,0.82) 46%, rgba(8,12,17,0.55) 100%), url('assets/milling.jpg'); }
+  #geschichte.photo-section { background-image: linear-gradient(rgba(8,12,17,0.90), rgba(8,12,17,0.90)), url('assets/shop-portrait.jpg'); background-position: center 22%; }
+  #qualitaet.photo-section { background-image: linear-gradient(90deg, rgba(8,12,17,0.93) 0%, rgba(8,12,17,0.80) 50%, rgba(8,12,17,0.52) 100%), url('assets/drilling.jpg'); }
+
   /* Footer */
   footer { border-top: 1px solid var(--line); padding-block: 40px; }
   .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: center; color: var(--ink-faint); font-size: 0.85rem; }
@@ -486,7 +515,7 @@
   </section>
 
   <!-- WERKSTOFFE -->
-  <section id="werkstoffe" style="background:var(--surface); border-block:1px solid var(--line);">
+  <section id="werkstoffe" class="photo-section">
     <div class="wrap">
       <div class="mat-wrap">
         <div class="mat-copy reveal">
@@ -507,15 +536,12 @@
             <span class="chip">Kunststoff <span class="code">POM · PA</span></span>
           </div>
         </div>
-        <figure class="mat-media reveal">
-          <img src="assets/milling.jpg" alt="CNC-Fräsbearbeitung eines Metallteils mit Spänen bei HKW" loading="lazy">
-        </figure>
       </div>
     </div>
   </section>
 
   <!-- GESCHICHTE -->
-  <section id="geschichte">
+  <section id="geschichte" class="photo-section">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="tag">03 · Geschichte</span>
@@ -524,11 +550,7 @@
           Präzisionsteile-Fertiger geworden. Die Stationen dazwischen:</p>
       </div>
 
-      <div class="gesch-grid">
-       <figure class="gesch-media reveal">
-         <img src="assets/shop-portrait.jpg" alt="Fräsmaschine in der Fertigung von HKW in Ramsau" loading="lazy">
-       </figure>
-       <div class="timeline reveal">
+      <div class="timeline reveal">
         <div class="tl-row">
           <div class="tl-year">1945</div>
           <div class="tl-body">
@@ -577,13 +599,12 @@
             <p>Der Schwerpunkt liegt auf anspruchsvollen Teilen mit engsten Toleranzen im Tausendstelbereich — rund 100.000 Präzisionsteile Monat für Monat.</p>
           </div>
         </div>
-       </div>
       </div>
     </div>
   </section>
 
   <!-- QUALITÄT -->
-  <section id="qualitaet" class="quality">
+  <section id="qualitaet" class="quality photo-section">
     <div class="wrap">
       <div class="q-grid">
         <div class="reveal">
@@ -608,9 +629,6 @@
             </div>
           </div>
         </div>
-        <figure class="q-visual reveal">
-          <img src="assets/drilling.jpg" alt="Präzisionsbohren mit Kühlschmierstoff bei HKW" loading="lazy">
-        </figure>
       </div>
     </div>
   </section>
