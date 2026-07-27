@@ -1,5 +1,5 @@
 <title>Hafelder Präzisionsteile GmbH — CNC-Präzisionsdrehteile seit 1945</title>
-<meta name="description" content="Hafelder Präzisionsteile (HKW) fertigt CNC-Dreh- und Frästeile mit Toleranzen im Tausendstelbereich — aus Messing, Niro, Titan, Stahl u. v. m. Rund 100.000 Präzisionsteile im Monat aus Hafeld, Oberösterreich.">
+<meta name="description" content="HAFELDER Präzisionsteile (vormals HKW) fertigt CNC-Dreh- und Frästeile mit Toleranzen im Tausendstelbereich — aus Messing, Niro, Titan, Stahl u. v. m. Rund 100.000 Präzisionsteile im Monat aus Ramsau, Niederösterreich.">
 
 <style>
   :root {
@@ -127,14 +127,15 @@
     display: flex; align-items: center; justify-content: space-between;
     height: 68px;
   }
-  .brand { display: flex; align-items: baseline; gap: 10px; }
+  .brand { display: flex; align-items: center; gap: 11px; }
+  .brand .logo-tick { width: 13px; height: 13px; flex: none; transform: rotate(45deg); border-radius: 2px; background: linear-gradient(135deg, var(--steel) 0 50%, var(--brass) 50% 100%); }
   .brand .mark {
-    font-family: var(--font-display); font-weight: 800; font-size: 1.25rem;
-    letter-spacing: 0.04em; color: var(--ink);
-    border: 2px solid var(--ink); padding: 2px 8px; border-radius: 3px;
+    font-family: var(--font-display); font-weight: 800; font-size: 1.14rem;
+    letter-spacing: 0.16em; color: var(--ink);
     line-height: 1;
   }
-  .brand .name { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+  .brand .name { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft); align-self: center; }
+  @media (max-width: 520px) { .brand .name { display: none; } }
   .nav-links { display: flex; gap: 30px; align-items: center; }
   .nav-links a { font-size: 0.9rem; color: var(--ink-soft); font-weight: 500; transition: color .15s; }
   .nav-links a:hover { color: var(--ink); }
@@ -293,6 +294,21 @@
   .cmeta a.v:hover { color: var(--steel); }
   .placeholder { color: var(--brass); font-family: var(--font-mono); font-size: 0.72rem; }
 
+  /* Karriere */
+  .jobs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 48px; }
+  @media (max-width: 680px) { .jobs { grid-template-columns: 1fr; } }
+  .job { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 30px; background: var(--bg); display: flex; flex-direction: column; transition: border-color .15s, transform .15s; }
+  .job:hover { border-color: var(--steel); transform: translateY(-3px); }
+  .job-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+  .job-type { font-family: var(--font-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; color: var(--steel); border: 1px solid currentColor; padding: 3px 10px; border-radius: 100px; }
+  .job-badge { font-family: var(--font-mono); font-size: .72rem; color: var(--ink-faint); letter-spacing: .05em; }
+  .job h3 { font-size: 1.22rem; letter-spacing: -0.01em; }
+  .job p { color: var(--ink-soft); font-size: .95rem; margin: 12px 0 22px; flex: 1; }
+  .job-apply { font-family: var(--font-body); font-weight: 600; color: var(--steel); font-size: .95rem; align-self: flex-start; transition: gap .15s; }
+  .job-apply:hover { color: var(--steel-deep); }
+  .jobs-note { margin-top: 28px; font-family: var(--font-mono); font-size: .85rem; color: var(--ink-soft); }
+  .jobs-note a { color: var(--steel); text-decoration: underline; text-underline-offset: 3px; }
+
   /* Footer */
   footer { border-top: 1px solid var(--line); padding-block: 40px; }
   .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: center; color: var(--ink-faint); font-size: 0.85rem; }
@@ -309,15 +325,17 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Hafelder Präzisionsteile — Startseite">
-      <span class="mark">HKW</span>
-      <span class="name">Hafelder Präzisionsteile</span>
+    <a class="brand" href="#top" aria-label="HAFELDER Präzisionsteile GmbH — Startseite">
+      <span class="logo-tick" aria-hidden="true"></span>
+      <span class="mark">HAFELDER</span>
+      <span class="name">Präzisionsteile · seit 1945</span>
     </a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
       <a href="#werkstoffe">Werkstoffe</a>
       <a href="#geschichte">Geschichte</a>
       <a href="#qualitaet">Qualität</a>
+      <a href="#karriere">Karriere</a>
       <a class="nav-cta" href="#kontakt">Anfrage senden</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Menü">MENÜ</button>
@@ -330,7 +348,7 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <span class="tag">Präzisionsdrehtechnik · seit 1945 · Hafeld / OÖ</span>
+        <span class="tag">Präzisionsdrehtechnik · gegründet 1945 · Ramsau (NÖ)</span>
         <h1>Drehteile mit Toleranzen im&nbsp;<span class="accent">Tausendstel&#8209;Bereich</span>.</h1>
         <p class="lede">
           Von der Kunststoffspritzerei zum Hightech-Zerspaner: Wir fertigen Sonder-Dreh- und
@@ -543,8 +561,8 @@
               <div class="qd"><h4>Jede Losgröße</h4><p>Vom Einzelteil und Prototyp bis zur wiederkehrenden Großserie — flexibel geplant.</p></div>
             </div>
             <div class="q-item">
-              <div class="qv">OÖ</div>
-              <div class="qd"><h4>Fertigung in Österreich</h4><p>Kurze Wege, direkter Ansprechpartner und persönliche Beratung aus Hafeld.</p></div>
+              <div class="qv">NÖ</div>
+              <div class="qd"><h4>Fertigung in Österreich</h4><p>Kurze Wege, direkter Ansprechpartner und persönliche Beratung aus Ramsau.</p></div>
             </div>
           </div>
         </div>
@@ -555,41 +573,77 @@
     </div>
   </section>
 
+  <!-- KARRIERE -->
+  <section id="karriere" style="background:var(--surface); border-block:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="tag brass">05 · Karriere</span>
+        <h2>Wir stellen ein.</h2>
+        <p>Zerspanung ist bei uns Handwerk und Hightech zugleich. Wenn du gern im
+          Tausendstelbereich arbeitest, findest du bei uns einen sicheren Platz —
+          vom ersten Lehrjahr bis zum erfahrenen Facharbeiter.</p>
+      </div>
+
+      <div class="jobs reveal">
+        <article class="job">
+          <div class="job-top"><span class="job-type">Lehre</span><span class="job-badge">m/w</span></div>
+          <h3>Zerspanungstechniker:in — Lehrling</h3>
+          <p>Deine Ausbildung an modernen CNC-Dreh- und Fräsmaschinen. Wir bringen dir das
+            Präzisionshandwerk von Grund auf bei — mit echten Teilen und echter Verantwortung.</p>
+          <a class="job-apply" href="mailto:info@hafelder.at?subject=Bewerbung%20Lehrstelle%20Zerspanungstechnik">Jetzt bewerben →</a>
+        </article>
+        <article class="job">
+          <div class="job-top"><span class="job-type">Vollzeit</span><span class="job-badge">m/w</span></div>
+          <h3>Zerspanungstechniker:in</h3>
+          <p>Du beherrschst Drehen und Fräsen und hast ein Gespür für enge Toleranzen?
+            Dann verstärke unser Team und bring deine Erfahrung in anspruchsvolle Sonderteile ein.</p>
+          <a class="job-apply" href="mailto:info@hafelder.at?subject=Bewerbung%20Zerspanungstechniker">Jetzt bewerben →</a>
+        </article>
+      </div>
+      <p class="jobs-note reveal">Bewerbungen an <a href="mailto:info@hafelder.at">info@hafelder.at</a></p>
+    </div>
+  </section>
+
   <!-- KONTAKT -->
   <section id="kontakt" class="contact">
     <div class="wrap">
       <div class="contact-card reveal">
         <div>
-          <span class="tag">05 · Kontakt</span>
+          <span class="tag">06 · Kontakt</span>
           <h2>Sie haben eine Zeichnung?<br>Wir haben die Maschine.</h2>
           <p class="lede">Schicken Sie uns Ihre Zeichnung oder Ihr Muster — Sie erhalten rasch
             eine belastbare Einschätzung zu Machbarkeit, Werkstoff und Serie.</p>
           <div class="hero-actions" style="margin-top:26px;">
-            <a class="btn btn-primary" href="mailto:office@hkw.at">Anfrage per E-Mail
+            <a class="btn btn-primary" href="mailto:info@hafelder.at">Anfrage per E-Mail
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
+            <a class="btn btn-ghost" href="tel:+4327643000">+43 (0) 2764 / 300-0</a>
           </div>
         </div>
         <div class="contact-meta">
           <div class="cmeta">
             <span class="k">Unternehmen</span>
-            <span class="v">Hafelder Präzisionsteile GmbH</span>
+            <span class="v">HAFELDER Präzisionsteile GmbH</span>
           </div>
           <div class="cmeta">
-            <span class="k">Standort</span>
-            <span class="v">Hafeld, Oberösterreich</span>
-          </div>
-          <div class="cmeta">
-            <span class="k">E-Mail</span>
-            <a class="v" href="mailto:office@hkw.at">office@hkw.at</a>
+            <span class="k">Adresse</span>
+            <span class="v">Unterdörfl 15, A-3172 Ramsau</span>
           </div>
           <div class="cmeta">
             <span class="k">Telefon</span>
-            <span class="v">+43 (0) __ / ___ __ __ <span class="placeholder">← bitte ergänzen</span></span>
+            <a class="v" href="tel:+4327643000">+43 (0) 2764 / 300-0</a>
+          </div>
+          <div class="cmeta">
+            <span class="k">Fax</span>
+            <span class="v">+43 (0) 2764 / 300-200</span>
+          </div>
+          <div class="cmeta">
+            <span class="k">E-Mail</span>
+            <a class="v" href="mailto:info@hafelder.at">info@hafelder.at</a>
           </div>
           <div class="cmeta">
             <span class="k">Web</span>
-            <span class="v">www.hkw.at</span>
+            <span class="v">www.hafelder.at</span>
           </div>
         </div>
       </div>
@@ -600,11 +654,12 @@
 <footer>
   <div class="wrap foot">
     <a class="brand" href="#top">
-      <span class="mark">HKW</span>
-      <span class="name">Hafelder Präzisionsteile GmbH</span>
+      <span class="logo-tick" aria-hidden="true"></span>
+      <span class="mark">HAFELDER</span>
+      <span class="name">Präzisionsteile GmbH</span>
     </a>
-    <span class="foot-note">Präzisionsdrehtechnik · Hafeld / OÖ · seit 1945</span>
-    <span>© 2026 Hafelder Präzisionsteile GmbH</span>
+    <span class="foot-note">Präzisionsdrehtechnik · Ramsau / NÖ · seit 1945</span>
+    <span>© 2026 HAFELDER Präzisionsteile GmbH</span>
   </div>
 </footer>
 
