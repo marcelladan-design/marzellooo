@@ -1,5 +1,5 @@
-<title>Hafelder Präzisionsteile GmbH — CNC-Präzisionsdrehteile seit 1945</title>
-<meta name="description" content="HAFELDER Präzisionsteile (vormals HKW) fertigt CNC-Dreh- und Frästeile mit Toleranzen im Tausendstelbereich — aus Messing, Niro, Titan, Stahl u. v. m. Rund 100.000 Präzisionsteile im Monat aus Ramsau, Niederösterreich.">
+<title>Leistungen — HAFELDER Präzisionsteile GmbH (HKW)</title>
+<meta name="description" content="Leistungen von HAFELDER Präzisionsteile (HKW): CNC-Fräsen & Drehen, Erodieren, Schleifen, Gewinderollen, Sägen, Galvanik/Oberflächen und Spritzguss — alles aus einer Hand in Ramsau, NÖ.">
 
 <style>
   :root {
@@ -384,19 +384,60 @@
   :focus-visible { outline: 2px solid var(--steel); outline-offset: 3px; border-radius: 2px; }
 </style>
 
+<style>
+  .backlink { font-family: var(--font-mono); font-size: .8rem; color: rgba(255,255,255,0.72); display: inline-flex; gap: 8px; align-items: center; }
+  .backlink:hover { color: #fff; }
+  .nav-links a[aria-current="page"] { color: var(--ink); }
+
+  .lhero { position: relative; isolation: isolate;
+    background-image: linear-gradient(90deg, rgba(8,12,17,0.93) 0%, rgba(8,12,17,0.74) 52%, rgba(8,12,17,0.5) 100%), url('assets/milling.jpg');
+    background-size: cover; background-position: center;
+    padding-block: clamp(80px,12vw,150px) clamp(50px,7vw,84px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .lhero .tag { color: #7cc4ef; } .lhero .tag::before { background: #7cc4ef; }
+  .lhero h1 { color: #fff; font-size: clamp(2.2rem,5.6vw,3.9rem); margin-top: 18px; max-width: 22ch; }
+  .lhero .lede { color: rgba(255,255,255,0.85); max-width: 60ch; margin-top: 20px; font-size: clamp(1.05rem,1.6vw,1.25rem); }
+  .lhero .facts { display: flex; flex-wrap: wrap; gap: 10px 34px; margin-top: 30px; font-family: var(--font-mono); font-size: .8rem; color: rgba(255,255,255,0.6); }
+  .lhero .facts b { color: #fff; font-weight: 600; }
+
+  .l-index { position: sticky; top: 68px; z-index: 20; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+  .l-index .wrap { display: flex; flex-wrap: wrap; gap: 6px 20px; padding-block: 14px; }
+  .l-index a { font-family: var(--font-mono); font-size: .78rem; color: var(--ink-soft); display: inline-flex; gap: 7px; align-items: baseline; }
+  .l-index a .ln { color: var(--steel); font-weight: 600; }
+  .l-index a:hover { color: var(--ink); }
+
+  .leistung { padding-block: clamp(52px,7vw,92px); border-top: 1px solid var(--line); scroll-margin-top: 128px; }
+  .leistung:first-of-type { border-top: none; }
+  .l-head { max-width: 64ch; }
+  .l-head h2 { font-size: clamp(1.9rem,4vw,2.7rem); margin-top: 14px; }
+  .l-intro { color: var(--ink-soft); font-size: 1.1rem; margin-top: 16px; }
+  .panels { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; }
+  @media (max-width: 760px) { .panels { grid-template-columns: 1fr; } }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); }
+  .panel-k { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--steel); }
+  .panel-lead { color: var(--ink-soft); margin: 14px 0 18px; font-size: .98rem; }
+  .mfab { display: flex; flex-wrap: wrap; gap: 9px; }
+  .mfab .chip { font-size: .8rem; padding: 8px 13px; }
+  .spec-rows { display: grid; gap: 0; margin-top: 4px; }
+  .spec-row { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); font-size: .96rem; }
+  .spec-row:first-child { border-top: none; }
+  .spec-row span { color: var(--ink-soft); }
+  .spec-row b { font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+  .panel-note { font-family: var(--font-mono); font-size: .78rem; color: var(--brass); margin-top: 16px; }
+</style>
+
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="HKW — HAFELDER Präzisionsteile GmbH — Startseite">
+    <a class="brand" href="index.html" aria-label="HKW — HAFELDER Präzisionsteile GmbH — Startseite">
       <span class="mark">HKW</span>
       <span class="name">Hafelder Präzisionsteile</span>
     </a>
     <nav class="nav-links" aria-label="Hauptnavigation">
-      <a href="leistungen.html">Leistungen</a>
-      <a href="#werkstoffe">Werkstoffe</a>
-      <a href="#geschichte">Geschichte</a>
-      <a href="#qualitaet">Qualität</a>
+      <a href="leistungen.html" aria-current="page">Leistungen</a>
+      <a href="index.html#werkstoffe">Werkstoffe</a>
+      <a href="index.html#geschichte">Geschichte</a>
+      <a href="index.html#qualitaet">Qualität</a>
       <a href="karriere.html">Karriere</a>
-      <a class="nav-cta" href="#kontakt">Anfrage senden</a>
+      <a class="nav-cta" href="index.html#kontakt">Anfrage senden</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Menü">MENÜ</button>
   </div>
@@ -404,244 +445,284 @@
 
 <main id="top">
 
-  <!-- HERO -->
-  <section class="hero">
-    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" tabindex="-1" aria-hidden="true">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="hero-corner" aria-hidden="true">
-      <span>MAT: MS58 · NIRO · TI</span>
-      <span>TOL ±0,001&nbsp;mm</span>
-    </div>
-
+  <section class="lhero">
     <div class="wrap">
-     <div class="hero-inner">
-      <span class="tag">Präzisionsdrehtechnik · gegründet 1945 · Ramsau (NÖ)</span>
-      <h1>Drehteile mit Toleranzen im&nbsp;<span class="accent">Tausendstel&#8209;Bereich</span>.</h1>
-      <p class="lede">
-        Von der Kunststoffspritzerei zum Hightech-Zerspaner: Wir fertigen Sonder-Dreh- und
-        Frästeile, die höchsten Anforderungen standhalten — rund 100.000 Stück im Monat,
-        aus nahezu jedem Werkstoff.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#kontakt">Zeichnung anfragen
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-        <a class="btn btn-ghost" href="#leistungen">Unsere Fertigung</a>
+      <a class="backlink" href="index.html">← Zur Startseite</a>
+      <div style="margin-top:22px;">
+        <span class="tag">Leistungen · Fertigung aus einer Hand</span>
+        <h1>Acht Fertigungsverfahren. Ein Ansprechpartner.</h1>
+        <p class="lede">Von Fräsen und Drehen über Erodieren, Schleifen und Gewinderollen bis zu
+          Galvanik und Spritzguss — bei uns entsteht Ihr Präzisionsteil komplett im Haus.
+          Das spart Schnittstellen, Wege und Zeit.</p>
+        <div class="facts">
+          <span><b>8</b>&nbsp;Verfahren im Haus</span>
+          <span><b>80+</b>&nbsp;Maschinen</span>
+          <span>Drehen bis&nbsp;<b>Ø 1.070 mm</b></span>
+          <span>Sägen bis&nbsp;<b>6.000 mm</b></span>
+        </div>
       </div>
-      <div class="spec-strip">
-        <span>⌀ <b>1&nbsp;–&nbsp;120&nbsp;mm</b></span>
-        <span>± <b>0,001&nbsp;mm</b> Toleranz</span>
-        <span><b>Einzelteil</b>&nbsp;bis&nbsp;<b>Großserie</b></span>
-      </div>
-     </div>
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats">
-    <div class="wrap" style="padding-inline:0;">
-      <div class="stats-inner">
-        <div class="stat">
-          <div class="num">1945</div>
-          <div class="cap">Gegründet in Hafeld</div>
+  <nav class="l-index" aria-label="Leistungsübersicht">
+    <div class="wrap">
+        <a href="#l1"><span class="ln">01</span> CNC-Fräsen</a>
+        <a href="#l2"><span class="ln">02</span> CNC-Drehen</a>
+        <a href="#l3"><span class="ln">03</span> Erodieren</a>
+        <a href="#l4"><span class="ln">04</span> Schleifen</a>
+        <a href="#l5"><span class="ln">05</span> Gewinderollen</a>
+        <a href="#l6"><span class="ln">06</span> Sägen</a>
+        <a href="#l7"><span class="ln">07</span> Galvanik &amp; Oberflächen</a>
+        <a href="#l8"><span class="ln">08</span> Spritzguss</a>
+    </div>
+  </nav>
+
+  <div class="wrap">
+
+    <article class="leistung" id="l1">
+      <div class="l-head reveal">
+        <span class="tag">01 · CNC-Fräsen</span>
+        <h2>CNC-Fräsen</h2>
+        <p class="l-intro">Auf 15 CNC-Fräsmaschinen fertigen wir anspruchsvolle Frästeile — von der einfachen Kontur bis zur 5-Achs-Bearbeitung mit B-Achse und Rundtisch. Maßhaltig, reproduzierbar und auf Wunsch auch in Überlänge.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Maschinenpark</span>
+          <p class="panel-lead">15 CNC-Fräsmaschinen — 4-Achs-Maschinen mit Teilapparat sowie 5-Achs-Maschinen mit B-Achse und Rundtisch.</p>
+          <div class="mfab">
+            <span class="chip">Haas</span>
+            <span class="chip">Emco VMC 600</span>
+            <span class="chip">Emco VMC 300</span>
+            <span class="chip">Doosan NM 410</span>
+            <span class="chip">Maho</span>
+            <span class="chip">Emco MMV 2000</span>
+            <span class="chip">Matec</span>
+            <span class="chip">u. a.</span>
+          </div>
         </div>
-        <div class="stat">
-          <div class="num">100.000<span class="u">/Mon</span></div>
-          <div class="cap">Gefertigte Drehteile</div>
-        </div>
-        <div class="stat">
-          <div class="num">±0,001<span class="u">mm</span></div>
-          <div class="cap">Erreichbare Toleranz</div>
-        </div>
-        <div class="stat">
-          <div class="num">7<span class="u">+</span></div>
-          <div class="cap">Werkstoffgruppen</div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>max. Verfahrweg X</span><b>3.000 mm</b></div>
+            <div class="spec-row"><span>max. Verfahrweg Y</span><b>750 mm</b></div>
+            <div class="spec-row"><span>max. Verfahrweg Z</span><b>1.100 mm</b></div>
+            <div class="spec-row"><span>Achsen</span><b>bis 5 · B-Achse + Rundtisch</b></div>
+          </div>
+          <p class="panel-note">Überlängen auf Anfrage.</p>
         </div>
       </div>
-    </div>
+    </article>
+
+    <article class="leistung" id="l2">
+      <div class="l-head reveal">
+        <span class="tag">02 · CNC-Drehen</span>
+        <h2>CNC-Drehen</h2>
+        <p class="l-intro">36 CNC-Drehmaschinen mit angetriebenen Werkzeugen und Y-Achse, ergänzt durch 8 Automatendrehmaschinen und konventionelle Drehbänke — vom Kleinteil bis zum großen Drehteil in Überlänge.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Maschinenpark</span>
+          <p class="panel-lead">36 CNC-Drehmaschinen (angetriebene Werkzeuge, Y-Achse), 8 Automatendrehmaschinen sowie konventionelle Drehbänke.</p>
+          <div class="mfab">
+            <span class="chip">Emco Turn 365 MC</span>
+            <span class="chip">Emco 320 / 340 / 342 / 425</span>
+            <span class="chip">Traub Drehautomaten</span>
+            <span class="chip">Voest Drehbänke</span>
+            <span class="chip">ZPS S60 1000 CNC</span>
+            <span class="chip">HEID S315</span>
+            <span class="chip">Okuma</span>
+            <span class="chip">Romi</span>
+            <span class="chip">DMG Mori</span>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Drehdurchmesser Ø</span><b>3 – 1.070 mm</b></div>
+            <div class="spec-row"><span>Spitzenweite / Drehlänge</span><b>max. 4.000 mm</b></div>
+            <div class="spec-row"><span>Stangendurchlass</span><b>bis Ø 250 mm</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="leistung" id="l3">
+      <div class="l-head reveal">
+        <span class="tag">03 · Erodieren</span>
+        <h2>Erodieren</h2>
+        <p class="l-intro">Draht- und Senkerodieren für filigrane Konturen, harte Werkstoffe und feinste Details, die sich zerspanend nicht mehr darstellen lassen.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Maschinenpark</span>
+          <p class="panel-lead">2 Sodick Drahterodiermaschinen (5-Achs) sowie 1 Senkerodiermaschine (4-Achs).</p>
+          <div class="mfab">
+            <span class="chip">Sodick AG600L</span>
+            <span class="chip">Sodick AQ300L</span>
+            <span class="chip">Z+K 600</span>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Drahterodieren L×B×H</span><b>600×400×350 mm</b></div>
+            <div class="spec-row"><span>Drahterodieren Ø</span><b>bis 400 mm</b></div>
+            <div class="spec-row"><span>Senkerodieren X/Y/Z</span><b>350×250×350 mm</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="leistung" id="l4">
+      <div class="l-head reveal">
+        <span class="tag">04 · Schleifen</span>
+        <h2>Schleifen</h2>
+        <p class="l-intro">Flach-, Rund- und spitzenloses Schleifen für höchste Oberflächengüte und engste Maßtoleranzen.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Maschinenpark</span>
+          <p class="panel-lead">1 CNC-Flächenschleifmaschine, 2 manuelle Flächenschleifmaschinen und 2 Rundschleifmaschinen. Spitzenloses Schleifen (Centerless) bis Ø 80 mm — auch im Durchlauf.</p>
+          <div class="mfab">
+            <span class="chip">CNC-Flächenschleifen</span>
+            <span class="chip">Flächenschleifen (2×)</span>
+            <span class="chip">Rundschleifen (2×)</span>
+            <span class="chip">Centerless bis Ø 80</span>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Flächenschleifen L×B×H</span><b>600×400×500 mm</b></div>
+            <div class="spec-row"><span>Spitzenlos (Centerless)</span><b>bis Ø 80 mm · Durchlauf</b></div>
+            <div class="spec-row"><span>Rundschleifen</span><b>auf Anfrage</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="leistung" id="l5">
+      <div class="l-head reveal">
+        <span class="tag">05 · Gewinderollen</span>
+        <h2>Gewinderollen</h2>
+        <p class="l-intro">Gewinde rollen statt schneiden — für höhere Festigkeit und beste Oberflächen. Dazu Passverzahnungen, Verdichten und Glattwalzen.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Maschinenpark</span>
+          <p class="panel-lead">4 Gewinderollmaschinen für alle gängigen Gewindearten.</p>
+          <div class="mfab">
+            <span class="chip">PEE WEE IV</span>
+            <span class="chip">Hill ACME M17585</span>
+            <span class="chip">Seny D50H</span>
+            <span class="chip">WMD GWR80</span>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Gewindearten</span><b>metrisch Regel &amp; Fein · Whitworth · Trapez</b></div>
+            <div class="spec-row"><span>Zusätzlich</span><b>Passverzahnen · Verdichten · Glattwalzen</b></div>
+            <div class="spec-row"><span>max. Durchmesser</span><b>bis Ø 150 mm</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="leistung" id="l6">
+      <div class="l-head reveal">
+        <span class="tag">06 · Sägen</span>
+        <h2>Sägen</h2>
+        <p class="l-intro">Zuschnitt von Rund- und Vierkantmaterial bis in große Abmessungen — der erste, maßhaltige Schritt jeder Fertigung.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Maschinenpark</span>
+          <p class="panel-lead">Automatische Bandsägen für Rund- und Vierkantmaterial.</p>
+          <div class="mfab">
+            <span class="chip">Behringer HBP 513A</span>
+            <span class="chip">Behringer HBP 263 AG</span>
+            <span class="chip">Kasto Kastofunctional A</span>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Rundmaterial Ø×L</span><b>Ø 520 × 6.000 mm</b></div>
+            <div class="spec-row"><span>Vierkant B×H×L</span><b>520×520×6.000 mm</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="leistung" id="l7">
+      <div class="l-head reveal">
+        <span class="tag">07 · Galvanik &amp; Oberflächen</span>
+        <h2>Galvanik &amp; Oberflächen</h2>
+        <p class="l-intro">Sämtliche Oberflächenveredelung im eigenen Haus — von Eloxal über Pulverbeschichtung bis Galvanik und Laserbeschriftung. Das spart Wege und Zeit.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Verfahren im Haus</span>
+          <p class="panel-lead">Eloxieren auf automatischer und händischer Straße sowie Galvanik, Beschichtung und Beschriftung.</p>
+          <div class="mfab">
+            <span class="chip">Eloxal farblos</span>
+            <span class="chip">Eloxal schwarz &amp; farbig</span>
+            <span class="chip">Hart-Eloxal</span>
+            <span class="chip">Pulverbeschichten (alle RAL)</span>
+            <span class="chip">Vernickeln (Glanz/Matt)</span>
+            <span class="chip">Verchromen (Glanz)</span>
+            <span class="chip">Laserbeschriften / Gravieren</span>
+            <span class="chip">Entfetten</span>
+            <span class="chip">Beizen</span>
+            <span class="chip">Waschen</span>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>max. Teilegröße L×B×H</span><b>1.350×750×250 mm</b></div>
+            <div class="spec-row"><span>Anlagen</span><b>automatisch + händisch</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="leistung" id="l8">
+      <div class="l-head reveal">
+        <span class="tag">08 · Spritzguss</span>
+        <h2>Spritzguss</h2>
+        <p class="l-intro">Kunststoff-Spritzguss — die Wurzel unseres Betriebs seit 1945 — ergänzt die Metallzerspanung um Kunststoffkomponenten.</p>
+      </div>
+      <div class="panels reveal">
+        <div class="panel">
+          <span class="panel-k">Maschinenpark</span>
+          <p class="panel-lead">4 Spritzgussmaschinen, unter anderem von ENGEL.</p>
+          <div class="mfab">
+            <span class="chip">ENGEL</span>
+            <span class="chip">u. a.</span>
+          </div>
+        </div>
+        <div class="panel">
+          <span class="panel-k">Abmessungen</span>
+          <div class="spec-rows">
+            <div class="spec-row"><span>Maschinen</span><b>4 Spritzgussmaschinen</b></div>
+            <div class="spec-row"><span>Abmessungen</span><b>auf Anfrage</b></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
   </div>
 
-  <!-- LEISTUNGEN -->
-  <section id="leistungen">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="tag">01 · Leistungen</span>
-        <h2>Zerspanung, die auf den Punkt genau ist.</h2>
-        <p>CNC-Drehen und -Fräsen unter einem Dach — von der einzelnen Sonderanfertigung
-          bis zur wiederkehrenden Serie, inklusive Bearbeitungszentren für komplexe Geometrien.</p>
-      </div>
-
-      <div class="svc-grid reveal">
-        <article class="svc">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v2M12 18v2M4 12h2M18 12h2"/></svg>
-          <div class="idx">CNC-DREHEN</div>
-          <h3>Präzisionsdrehteile</h3>
-          <p>Lang- und Kurzdrehteile mit engsten Toleranzen — für Anwendungen, bei denen jedes Tausendstel zählt.</p>
-        </article>
-        <article class="svc">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v6M12 9l-3.5 3.5M12 9l3.5 3.5"/><rect x="4" y="14" width="16" height="6" rx="1"/></svg>
-          <div class="idx">CNC-FRÄSEN</div>
-          <h3>Bearbeitungszentren</h3>
-          <p>Komplexe Fräs- und Kombiteile auf modernen Bearbeitungszentren — mehrseitig, maßhaltig, reproduzierbar.</p>
-        </article>
-        <article class="svc">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20l6-6M14 10l6-6M9 5l10 10M5 9l4-4"/><circle cx="6.5" cy="6.5" r="2"/></svg>
-          <div class="idx">SONDERTEILE</div>
-          <h3>Sonderanfertigung</h3>
-          <p>Individuelle Dreh- und Frästeile nach Zeichnung oder Muster — dort, wo Standard nicht ausreicht.</p>
-        </article>
-        <article class="svc">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>
-          <div class="idx">SERIEN</div>
-          <h3>Klein- &amp; Großserien</h3>
-          <p>Rund 100.000 Teile im Monat — mit gleichbleibender Qualität von der ersten bis zur letzten Charge.</p>
-        </article>
-        <article class="svc">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 4v6c0 4-3 6-7 8-4-2-7-4-7-8V7z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
-          <div class="idx">PROTOTYPEN</div>
-          <h3>Muster &amp; Erstteile</h3>
-          <p>Vom Prototyp zur Serienreife — schnelle Erstmuster und Machbarkeitsprüfung für Ihre Entwicklung.</p>
-        </article>
-        <article class="svc">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18" stroke-dasharray="2 2"/><circle cx="12" cy="12" r="9"/></svg>
-          <div class="idx">MESSTECHNIK</div>
-          <h3>Maßkontrolle</h3>
-          <p>Durchgängige Kontrolle im Tausendstelbereich — dokumentiert und nachvollziehbar bis zum Einzelteil.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- WERKSTOFFE -->
-  <section id="werkstoffe" class="photo-section">
-    <div class="wrap">
-      <div class="mat-wrap">
-        <div class="mat-copy reveal">
-          <span class="tag brass">02 · Werkstoffe</span>
-          <h3>Von Messing bis Titan — wir zerspanen fast alles.</h3>
-          <p>Ob weiches Buntmetall oder hochfestes Titan: Unsere Erfahrung reicht von der
-            klassischen Messingdreherei bis zu anspruchsvollen Sonderwerkstoffen. Jedes Material
-            hat seine Eigenheiten — wir kennen sie und holen das Beste an Maßhaltigkeit und
-            Oberfläche heraus.</p>
-          <div class="mat-chips">
-            <span class="chip">Messing <span class="code">MS58</span></span>
-            <span class="chip">Niro <span class="code">1.4301</span></span>
-            <span class="chip">Kupfer <span class="code">Cu</span></span>
-            <span class="chip">Titan <span class="code">Ti</span></span>
-            <span class="chip">Stahl <span class="code">St</span></span>
-            <span class="chip">Guss <span class="code">GG</span></span>
-            <span class="chip">Aluminium <span class="code">Al</span></span>
-            <span class="chip">Kunststoff <span class="code">POM · PA</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GESCHICHTE -->
-  <section id="geschichte" class="photo-section">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="tag">03 · Geschichte</span>
-        <h2>Acht Jahrzehnte Werkstoff-Know-how.</h2>
-        <p>Aus dem Hafelder Kunststoffwerk (HKW) von 1945 ist ein spezialisierter
-          Präzisionsteile-Fertiger geworden. Die Stationen dazwischen:</p>
-      </div>
-
-      <div class="timeline reveal">
-        <div class="tl-row">
-          <div class="tl-year">1945</div>
-          <div class="tl-body">
-            <span class="tl-tag">Gründung</span>
-            <h3>Hafelder Kunststoffwerk</h3>
-            <p>Ing. Zittmayr gründet den Betrieb in Hafeld (OÖ). Gearbeitet wird ausschließlich mit Kunststoffspritzmaschinen — unter anderem für die Tränkebeckenproduktion.</p>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-year">1990</div>
-          <div class="tl-body">
-            <span class="tl-tag">Übernahme</span>
-            <h3>Neue Eigentümerschaft</h3>
-            <p>Friedrich Gruber erwirbt die Firma und führt sie als Kunststoffspritzerei weiter — der Grundstein für die spätere Eigenfertigung von Ersatzteilen.</p>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-year">1995</div>
-          <div class="tl-body">
-            <span class="tl-tag">Erste Dreherei</span>
-            <h3>Vom Spritzguss zur Zerspanung</h3>
-            <p>Die ersten Ersatzteile für Quellbecken entstehen in Eigenproduktion — auf der ersten Drehmaschine, einer Emco 342S. Nach und nach folgen weitere Drehmaschinen und zwei Bearbeitungszentren.</p>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-year">2000</div>
-          <div class="tl-body">
-            <span class="tl-tag">Standort</span>
-            <h3>Umzug ins neue Betriebsareal</h3>
-            <p>Der Betrieb übersiedelt in die Hallen eines ehemaligen Büromöbelwerks — mehr Platz für einen wachsenden Maschinenpark.</p>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-year">2002</div>
-          <div class="tl-body">
-            <span class="tl-tag">Wachstum &amp; Umbenennung</span>
-            <h3>Hafelder Präzisionsteile GmbH</h3>
-            <p>Mit der Übernahme der Dreherei Ing. Arzberger (Trumau) samt Maschinen und Kunden verdoppelt sich das Unternehmen nahezu — und wird zur Hafelder Präzisionsteile GmbH.</p>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-year">Heute</div>
-          <div class="tl-body">
-            <span class="tl-tag">Spezialisierung</span>
-            <h3>Sonder-Dreh- und Frästeile</h3>
-            <p>Der Schwerpunkt liegt auf anspruchsvollen Teilen mit engsten Toleranzen im Tausendstelbereich — rund 100.000 Präzisionsteile Monat für Monat.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUALITÄT -->
-  <section id="qualitaet" class="quality photo-section">
-    <div class="wrap">
-      <div class="q-grid">
-        <div class="reveal">
-          <span class="tag">04 · Qualität</span>
-          <h2 style="font-size:clamp(1.9rem,4vw,2.8rem); margin-top:14px;">Wo Standard aufhört, fangen wir an.</h2>
-          <div class="q-list">
-            <div class="q-item">
-              <div class="qv">±0,001 mm</div>
-              <div class="qd"><h4>Engste Toleranzen</h4><p>Maßhaltigkeit im Tausendstelbereich für sicherheits- und funktionskritische Teile.</p></div>
-            </div>
-            <div class="q-item">
-              <div class="qv">100 %</div>
-              <div class="qd"><h4>Kontrollierte Fertigung</h4><p>Durchgängige Maßkontrolle — von der Erstmusterprüfung bis zur laufenden Serie.</p></div>
-            </div>
-            <div class="q-item">
-              <div class="qv">1 – ∞</div>
-              <div class="qd"><h4>Jede Losgröße</h4><p>Vom Einzelteil und Prototyp bis zur wiederkehrenden Großserie — flexibel geplant.</p></div>
-            </div>
-            <div class="q-item">
-              <div class="qv">NÖ</div>
-              <div class="qd"><h4>Fertigung in Österreich</h4><p>Kurze Wege, direkter Ansprechpartner und persönliche Beratung aus Ramsau.</p></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- KONTAKT -->
-  <section id="kontakt" class="contact">
+  <section id="kontakt-cta" class="contact">
     <div class="wrap">
       <div class="contact-card reveal">
         <div>
-          <span class="tag">05 · Kontakt</span>
-          <h2>Sie haben eine Zeichnung?<br>Wir haben die Maschine.</h2>
-          <p class="lede">Schicken Sie uns Ihre Zeichnung oder Ihr Muster — Sie erhalten rasch
-            eine belastbare Einschätzung zu Machbarkeit, Werkstoff und Serie.</p>
+          <span class="tag">Anfrage</span>
+          <h2>Ihr Teil, unsere Maschinen.</h2>
+          <p class="lede">Senden Sie uns Ihre Zeichnung — Sie erhalten rasch eine belastbare
+            Einschätzung zu Fertigung, Werkstoff und Serie, über alle Verfahren hinweg.</p>
           <div class="hero-actions" style="margin-top:26px;">
             <a class="btn btn-primary" href="mailto:info@hafelder.at">Anfrage per E-Mail
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -650,30 +731,10 @@
           </div>
         </div>
         <div class="contact-meta">
-          <div class="cmeta">
-            <span class="k">Unternehmen</span>
-            <span class="v">HAFELDER Präzisionsteile GmbH</span>
-          </div>
-          <div class="cmeta">
-            <span class="k">Adresse</span>
-            <span class="v">Unterdörfl 15, A-3172 Ramsau</span>
-          </div>
-          <div class="cmeta">
-            <span class="k">Telefon</span>
-            <a class="v" href="tel:+4327643000">+43 (0) 2764 / 300-0</a>
-          </div>
-          <div class="cmeta">
-            <span class="k">Fax</span>
-            <span class="v">+43 (0) 2764 / 300-200</span>
-          </div>
-          <div class="cmeta">
-            <span class="k">E-Mail</span>
-            <a class="v" href="mailto:info@hafelder.at">info@hafelder.at</a>
-          </div>
-          <div class="cmeta">
-            <span class="k">Web</span>
-            <span class="v">www.hafelder.at</span>
-          </div>
+          <div class="cmeta"><span class="k">Unternehmen</span><span class="v">HAFELDER Präzisionsteile GmbH</span></div>
+          <div class="cmeta"><span class="k">Adresse</span><span class="v">Unterdörfl 15, A-3172 Ramsau</span></div>
+          <div class="cmeta"><span class="k">Telefon</span><a class="v" href="tel:+4327643000">+43 (0) 2764 / 300-0</a></div>
+          <div class="cmeta"><span class="k">E-Mail</span><a class="v" href="mailto:info@hafelder.at">info@hafelder.at</a></div>
         </div>
       </div>
     </div>
@@ -682,7 +743,7 @@
 
 <footer>
   <div class="wrap foot">
-    <a class="brand" href="#top">
+    <a class="brand" href="index.html">
       <span class="mark">HKW</span>
       <span class="name">Hafelder Präzisionsteile GmbH</span>
     </a>
@@ -692,183 +753,11 @@
 </footer>
 
 <script>
-  // Mobile menu: simple anchor jump list
   document.getElementById('menuBtn')?.addEventListener('click', function () {
-    document.getElementById('kontakt')?.scrollIntoView();
+    document.getElementById('kontakt-cta')?.scrollIntoView();
   });
-
-  // Respect reduced-motion for the hero background video
-  (function () {
-    const v = document.getElementById('heroVideo');
-    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      v.removeAttribute('autoplay');
-      try { v.pause(); } catch (e) {}
-    }
-  })();
-
-  // Scroll reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.14 });
+  }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function cssvar(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
-
-  // ---- Hero: turned part (concentric rings, slowly rotating tool marks) ----
-  (function () {
-    const canvas = document.getElementById('partCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let w, h, dpr, cx, cy, R;
-    function resize() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const rect = canvas.getBoundingClientRect();
-      w = rect.width; h = rect.height;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cx = w / 2; cy = h / 2; R = Math.min(w, h) * 0.42;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    let t = 0;
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      const steel = cssvar('--steel');
-      const brass = cssvar('--brass');
-      const line = cssvar('--line-strong');
-
-      // outer bounding square (technical drawing frame)
-      ctx.strokeStyle = line;
-      ctx.lineWidth = 1;
-      ctx.globalAlpha = 0.5;
-      ctx.strokeRect(cx - R * 1.18, cy - R * 1.18, R * 2.36, R * 2.36);
-      ctx.globalAlpha = 1;
-
-      // crosshair
-      ctx.strokeStyle = line;
-      ctx.setLineDash([4, 5]);
-      ctx.beginPath();
-      ctx.moveTo(cx - R * 1.3, cy); ctx.lineTo(cx + R * 1.3, cy);
-      ctx.moveTo(cx, cy - R * 1.3); ctx.lineTo(cx, cy + R * 1.3);
-      ctx.stroke();
-      ctx.setLineDash([]);
-
-      // concentric turning rings
-      const rings = 9;
-      for (let i = rings; i >= 1; i--) {
-        const rr = R * (i / rings);
-        ctx.beginPath();
-        ctx.arc(cx, cy, rr, 0, Math.PI * 2);
-        ctx.strokeStyle = i % 3 === 0 ? steel : line;
-        ctx.globalAlpha = i % 3 === 0 ? 0.85 : 0.4;
-        ctx.lineWidth = i % 3 === 0 ? 1.4 : 1;
-        ctx.stroke();
-      }
-      ctx.globalAlpha = 1;
-
-      // rotating tool-mark spokes (the "lathe" motion)
-      const spokes = 60;
-      ctx.strokeStyle = brass;
-      for (let i = 0; i < spokes; i++) {
-        const a = (i / spokes) * Math.PI * 2 + t;
-        const r0 = R * 0.16;
-        const r1 = R * (0.9 + 0.08 * Math.sin(i * 1.7 + t * 2));
-        ctx.globalAlpha = 0.10 + 0.10 * ((i % 5) === 0 ? 1 : 0);
-        ctx.beginPath();
-        ctx.moveTo(cx + Math.cos(a) * r0, cy + Math.sin(a) * r0);
-        ctx.lineTo(cx + Math.cos(a) * r1, cy + Math.sin(a) * r1);
-        ctx.stroke();
-      }
-      ctx.globalAlpha = 1;
-
-      // hub
-      ctx.beginPath();
-      ctx.arc(cx, cy, R * 0.13, 0, Math.PI * 2);
-      ctx.fillStyle = steel; ctx.globalAlpha = 0.9; ctx.fill();
-      ctx.globalAlpha = 1;
-      ctx.beginPath();
-      ctx.arc(cx, cy, R * 0.05, 0, Math.PI * 2);
-      ctx.fillStyle = brass; ctx.fill();
-
-      if (!reduce) { t += 0.006; requestAnimationFrame(draw); }
-    }
-    draw();
-  })();
-
-  // ---- Quality gauge: dial sweeping toward a tolerance tick ----
-  (function () {
-    const canvas = document.getElementById('gaugeCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let w, h, dpr, cx, cy, R;
-    function resize() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const rect = canvas.getBoundingClientRect();
-      w = rect.width; h = rect.height;
-      canvas.width = w * dpr; canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      cx = w / 2; cy = h * 0.56; R = Math.min(w, h) * 0.34;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    let phase = 0;
-    function draw() {
-      ctx.clearRect(0, 0, w, h);
-      const steel = cssvar('--steel');
-      const brass = cssvar('--brass');
-      const line = cssvar('--line-strong');
-      const ink = cssvar('--ink-soft');
-
-      const start = Math.PI * 0.75, end = Math.PI * 2.25;
-      // arc track
-      ctx.lineWidth = 3;
-      ctx.strokeStyle = line;
-      ctx.beginPath(); ctx.arc(cx, cy, R, start, end); ctx.stroke();
-
-      // fine ticks
-      const ticks = 40;
-      for (let i = 0; i <= ticks; i++) {
-        const a = start + (end - start) * (i / ticks);
-        const major = i % 5 === 0;
-        const r1 = R + 4, r2 = R + (major ? 14 : 9);
-        ctx.strokeStyle = major ? ink : line;
-        ctx.lineWidth = major ? 1.6 : 1;
-        ctx.beginPath();
-        ctx.moveTo(cx + Math.cos(a) * r1, cy + Math.sin(a) * r1);
-        ctx.lineTo(cx + Math.cos(a) * r2, cy + Math.sin(a) * r2);
-        ctx.stroke();
-      }
-
-      // target tolerance band (brass)
-      const bc = 0.5;
-      const bandA = start + (end - start) * (bc - 0.02);
-      const bandB = start + (end - start) * (bc + 0.02);
-      ctx.strokeStyle = brass; ctx.lineWidth = 5;
-      ctx.beginPath(); ctx.arc(cx, cy, R, bandA, bandB); ctx.stroke();
-
-      // needle easing toward center (the "in tolerance" reading)
-      const target = 0.5 + 0.002 * Math.sin(phase * 1.3);
-      const needleT = reduce ? 0.5 : (0.5 + (target - 0.5) + 0.16 * Math.sin(phase) * Math.exp(-phase * 0.02));
-      const na = start + (end - start) * Math.min(Math.max(needleT, 0), 1);
-      ctx.strokeStyle = steel; ctx.lineWidth = 2.4; ctx.lineCap = 'round';
-      ctx.beginPath();
-      ctx.moveTo(cx, cy);
-      ctx.lineTo(cx + Math.cos(na) * R * 0.92, cy + Math.sin(na) * R * 0.92);
-      ctx.stroke();
-      ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI * 2); ctx.fillStyle = steel; ctx.fill();
-
-      // readout
-      ctx.fillStyle = ink;
-      ctx.font = '600 ' + Math.max(11, R * 0.16) + 'px ui-monospace, monospace';
-      ctx.textAlign = 'center';
-      ctx.fillText('± 0,001 mm', cx, cy + R * 0.62);
-
-      if (!reduce) { phase += 0.03; requestAnimationFrame(draw); }
-    }
-    draw();
-  })();
 </script>
