@@ -423,6 +423,16 @@
   .spec-row span { color: var(--ink-soft); }
   .spec-row b { font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
   .panel-note { font-family: var(--font-mono); font-size: .78rem; color: var(--brass); margin-top: 16px; }
+
+  /* Background video behind Leistung 1–8 */
+  .leist-video { position: relative; isolation: isolate; overflow: hidden; }
+  .leist-video-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; background: #0b1015; }
+  .leist-video-scrim { position: absolute; inset: 0; z-index: -1; background: linear-gradient(rgba(8,12,17,0.86), rgba(8,12,17,0.90)); }
+  .leist-video .tag { color: #7cc4ef; }
+  .leist-video .tag::before { background: #7cc4ef; }
+  .leist-video .l-head h2 { color: #fff; }
+  .leist-video .l-intro { color: rgba(255,255,255,0.85); }
+  .leist-video .leistung { border-color: rgba(255,255,255,0.14); }
 </style>
 
 <header>
@@ -477,7 +487,12 @@
     </div>
   </nav>
 
-  <div class="wrap">
+  <section class="leist-video">
+    <video class="leist-video-bg" id="leistVideo" autoplay muted loop playsinline preload="auto" tabindex="-1" aria-hidden="true">
+      <source src="assets/leistungen-bg.mp4" type="video/mp4">
+    </video>
+    <div class="leist-video-scrim" aria-hidden="true"></div>
+   <div class="wrap">
 
     <article class="leistung" id="l1">
       <div class="l-head reveal">
@@ -713,7 +728,8 @@
       </div>
     </article>
 
-  </div>
+   </div>
+  </section>
 
   <section id="kontakt-cta" class="contact">
     <div class="wrap">
@@ -756,6 +772,13 @@
   document.getElementById('menuBtn')?.addEventListener('click', function () {
     document.getElementById('kontakt-cta')?.scrollIntoView();
   });
+  (function () {
+    const v = document.getElementById('leistVideo');
+    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay');
+      try { v.pause(); } catch (e) {}
+    }
+  })();
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
