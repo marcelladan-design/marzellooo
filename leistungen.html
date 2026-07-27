@@ -423,16 +423,6 @@
   .spec-row span { color: var(--ink-soft); }
   .spec-row b { font-family: var(--font-mono); font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
   .panel-note { font-family: var(--font-mono); font-size: .78rem; color: var(--brass); margin-top: 16px; }
-
-  /* Vertical video column beside Leistung 1–8 */
-  .lv-grid { display: grid; grid-template-columns: minmax(230px, 330px) 1fr; gap: clamp(28px,4vw,56px); align-items: start; }
-  .lv-video { position: sticky; top: 92px; }
-  .lv-video video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; display: block; border-radius: var(--radius-lg); border: 1px solid var(--line); box-shadow: var(--shadow); background: #0b1015; }
-  .lv-articles .leistung:first-of-type { padding-top: 0; }
-  @media (max-width: 860px) {
-    .lv-grid { grid-template-columns: 1fr; }
-    .lv-video { position: static; max-width: 300px; margin-bottom: 10px; }
-  }
 </style>
 
 <header>
@@ -487,14 +477,7 @@
     </div>
   </nav>
 
-  <section class="leist-with-video">
-    <div class="wrap lv-grid">
-      <aside class="lv-video">
-        <video id="leistVideo" autoplay muted loop playsinline preload="auto" tabindex="-1" aria-hidden="true">
-          <source src="assets/leistungen-bg.mp4" type="video/mp4">
-        </video>
-      </aside>
-      <div class="lv-articles">
+  <div class="wrap">
 
     <article class="leistung" id="l1">
       <div class="l-head reveal">
@@ -730,9 +713,7 @@
       </div>
     </article>
 
-      </div>
-    </div>
-  </section>
+  </div>
 
   <section id="kontakt-cta" class="contact">
     <div class="wrap">
@@ -775,13 +756,6 @@
   document.getElementById('menuBtn')?.addEventListener('click', function () {
     document.getElementById('kontakt-cta')?.scrollIntoView();
   });
-  (function () {
-    const v = document.getElementById('leistVideo');
-    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      v.removeAttribute('autoplay');
-      try { v.pause(); } catch (e) {}
-    }
-  })();
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12 });
