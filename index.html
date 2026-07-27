@@ -177,7 +177,7 @@
   }
   @media (max-width: 620px) { .hero-corner { display: none; } }
 
-  .hero-inner { position: relative; max-width: 720px; }
+  .hero-inner { position: relative; max-width: 760px; margin-inline: auto; text-align: center; }
 
   /* Hero sits over video → light treatment in both themes */
   .hero .tag { color: #7cc4ef; }
@@ -189,13 +189,14 @@
   .hero h1 .accent { color: #e6b366; }
   .hero .lede {
     font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-    color: rgba(255,255,255,0.84); max-width: 48ch; margin: 22px 0 0;
+    color: rgba(255,255,255,0.84); max-width: 48ch; margin: 22px auto 0;
   }
   .hero .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.38); }
   .hero .btn-ghost:hover { border-color: #e6b366; color: #e6b366; }
   .hero .spec-strip { color: rgba(255,255,255,0.6); }
   .hero .spec-strip b { color: #fff; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+  .hero .hero-actions, .hero .spec-strip { justify-content: center; }
   .btn {
     font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
     padding: 13px 24px; border-radius: var(--radius); cursor: pointer; border: 1px solid transparent;
