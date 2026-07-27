@@ -127,14 +127,14 @@
     display: flex; align-items: center; justify-content: space-between;
     height: 68px;
   }
-  .brand { display: flex; align-items: center; gap: 11px; }
-  .brand .logo-tick { width: 13px; height: 13px; flex: none; transform: rotate(45deg); border-radius: 2px; background: linear-gradient(135deg, var(--steel) 0 50%, var(--brass) 50% 100%); }
+  .brand { display: flex; align-items: baseline; gap: 10px; }
   .brand .mark {
-    font-family: var(--font-display); font-weight: 800; font-size: 1.14rem;
-    letter-spacing: 0.16em; color: var(--ink);
+    font-family: var(--font-display); font-weight: 800; font-size: 1.25rem;
+    letter-spacing: 0.04em; color: var(--ink);
+    border: 2px solid var(--ink); padding: 2px 8px; border-radius: 3px;
     line-height: 1;
   }
-  .brand .name { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-soft); align-self: center; }
+  .brand .name { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
   @media (max-width: 520px) { .brand .name { display: none; } }
   .nav-links { display: flex; gap: 30px; align-items: center; }
   .nav-links a { font-size: 0.9rem; color: var(--ink-soft); font-weight: 500; transition: color .15s; }
@@ -325,10 +325,9 @@
 
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="HAFELDER Präzisionsteile GmbH — Startseite">
-      <span class="logo-tick" aria-hidden="true"></span>
-      <span class="mark">HAFELDER</span>
-      <span class="name">Präzisionsteile · seit 1945</span>
+    <a class="brand" href="#top" aria-label="HKW — HAFELDER Präzisionsteile GmbH — Startseite">
+      <span class="mark">HKW</span>
+      <span class="name">Hafelder Präzisionsteile</span>
     </a>
     <nav class="nav-links" aria-label="Hauptnavigation">
       <a href="#leistungen">Leistungen</a>
@@ -654,9 +653,8 @@
 <footer>
   <div class="wrap foot">
     <a class="brand" href="#top">
-      <span class="logo-tick" aria-hidden="true"></span>
-      <span class="mark">HAFELDER</span>
-      <span class="name">Präzisionsteile GmbH</span>
+      <span class="mark">HKW</span>
+      <span class="name">Hafelder Präzisionsteile GmbH</span>
     </a>
     <span class="foot-note">Präzisionsdrehtechnik · Ramsau / NÖ · seit 1945</span>
     <span>© 2026 HAFELDER Präzisionsteile GmbH</span>
