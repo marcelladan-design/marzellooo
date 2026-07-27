@@ -156,21 +156,49 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero { position: relative; padding-top: clamp(48px, 8vw, 96px); padding-bottom: clamp(48px, 8vw, 88px); overflow: hidden; }
-  .hero-grid {
-    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(28px, 5vw, 64px); align-items: center;
+  .hero {
+    position: relative; overflow: hidden; isolation: isolate;
+    min-height: min(90vh, 780px);
+    display: flex; align-items: center;
+    padding-block: clamp(90px, 14vh, 160px);
   }
-  @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero-video {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; z-index: -2; background: #0b1015;
+  }
+  .hero-scrim {
+    position: absolute; inset: 0; z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(7,12,17,0.90) 0%, rgba(7,12,17,0.66) 48%, rgba(7,12,17,0.34) 100%),
+      linear-gradient(0deg, rgba(7,12,17,0.80) 0%, rgba(7,12,17,0) 42%),
+      radial-gradient(120% 120% at 85% 15%, rgba(30,95,140,0.28), transparent 55%);
+  }
+  .hero-corner {
+    position: absolute; top: 20px; right: var(--gutter); z-index: 1;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
+    font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.05em;
+    color: rgba(255,255,255,0.55); text-align: right;
+  }
+  @media (max-width: 620px) { .hero-corner { display: none; } }
 
+  .hero-inner { position: relative; max-width: 720px; }
+
+  /* Hero sits over video → light treatment in both themes */
+  .hero .tag { color: #7cc4ef; }
+  .hero .tag::before { background: #7cc4ef; }
   .hero h1 {
     font-size: clamp(2.5rem, 6.6vw, 4.6rem);
-    margin: 18px 0 0;
+    margin: 20px 0 0; color: #fff;
   }
-  .hero h1 .accent { color: var(--steel); }
+  .hero h1 .accent { color: #e6b366; }
   .hero .lede {
     font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-    color: var(--ink-soft); max-width: 46ch; margin: 22px 0 0;
+    color: rgba(255,255,255,0.84); max-width: 48ch; margin: 22px 0 0;
   }
+  .hero .btn-ghost { color: #fff; border-color: rgba(255,255,255,0.38); }
+  .hero .btn-ghost:hover { border-color: #e6b366; color: #e6b366; }
+  .hero .spec-strip { color: rgba(255,255,255,0.6); }
+  .hero .spec-strip b { color: #fff; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
   .btn {
     font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
@@ -345,32 +373,33 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div>
-        <span class="tag">Präzisionsdrehtechnik · gegründet 1945 · Ramsau (NÖ)</span>
-        <h1>Drehteile mit Toleranzen im&nbsp;<span class="accent">Tausendstel&#8209;Bereich</span>.</h1>
-        <p class="lede">
-          Von der Kunststoffspritzerei zum Hightech-Zerspaner: Wir fertigen Sonder-Dreh- und
-          Frästeile, die höchsten Anforderungen standhalten — rund 100.000 Stück im Monat,
-          aus nahezu jedem Werkstoff.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#kontakt">Zeichnung anfragen
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="#leistungen">Unsere Fertigung</a>
-        </div>
-        <div class="spec-strip">
-          <span>⌀ <b>1&nbsp;–&nbsp;120&nbsp;mm</b></span>
-          <span>± <b>0,001&nbsp;mm</b> Toleranz</span>
-          <span><b>Einzelteil</b>&nbsp;bis&nbsp;<b>Großserie</b></span>
-        </div>
-      </div>
+    <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" tabindex="-1" aria-hidden="true">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-corner" aria-hidden="true">
+      <span>MAT: MS58 · NIRO · TI</span>
+      <span>TOL ±0,001&nbsp;mm</span>
+    </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <canvas id="partCanvas"></canvas>
-        <span class="vlabel vl-1">MAT: MS58 · NIRO · TI</span>
-        <span class="vlabel vl-2">TOL <b>±0,001</b></span>
+    <div class="wrap hero-inner">
+      <span class="tag">Präzisionsdrehtechnik · gegründet 1945 · Ramsau (NÖ)</span>
+      <h1>Drehteile mit Toleranzen im&nbsp;<span class="accent">Tausendstel&#8209;Bereich</span>.</h1>
+      <p class="lede">
+        Von der Kunststoffspritzerei zum Hightech-Zerspaner: Wir fertigen Sonder-Dreh- und
+        Frästeile, die höchsten Anforderungen standhalten — rund 100.000 Stück im Monat,
+        aus nahezu jedem Werkstoff.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#kontakt">Zeichnung anfragen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#leistungen">Unsere Fertigung</a>
+      </div>
+      <div class="spec-strip">
+        <span>⌀ <b>1&nbsp;–&nbsp;120&nbsp;mm</b></span>
+        <span>± <b>0,001&nbsp;mm</b> Toleranz</span>
+        <span><b>Einzelteil</b>&nbsp;bis&nbsp;<b>Großserie</b></span>
       </div>
     </div>
   </section>
@@ -666,6 +695,15 @@
   document.getElementById('menuBtn')?.addEventListener('click', function () {
     document.getElementById('kontakt')?.scrollIntoView();
   });
+
+  // Respect reduced-motion for the hero background video
+  (function () {
+    const v = document.getElementById('heroVideo');
+    if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      v.removeAttribute('autoplay');
+      try { v.pause(); } catch (e) {}
+    }
+  })();
 
   // Scroll reveal
   const io = new IntersectionObserver((entries) => {
