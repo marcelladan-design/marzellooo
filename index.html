@@ -259,7 +259,7 @@
   .svc .icon { width: 30px; height: 30px; color: var(--steel); margin-bottom: 6px; }
 
   /* Materials */
-  .mat-wrap { margin-top: 48px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+  .mat-wrap { margin-top: 48px; display: grid; grid-template-columns: 1fr 0.92fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
   @media (max-width: 820px) { .mat-wrap { grid-template-columns: 1fr; } }
   .mat-chips { display: flex; flex-wrap: wrap; gap: 12px; }
   .chip {
@@ -271,6 +271,9 @@
   .chip .code { color: var(--brass); font-size: 0.72rem; }
   .mat-copy p { color: var(--ink-soft); }
   .mat-copy h3 { font-size: 1.5rem; margin-bottom: 14px; }
+  .mat-copy .mat-chips { margin-top: 26px; }
+  .mat-media { margin: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); }
+  .mat-media img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 4 / 3.3; }
 
   /* Timeline */
   .timeline { margin-top: 56px; display: grid; gap: 0; }
@@ -285,6 +288,14 @@
   .tl-row .tl-tag { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--brass); display: block; margin-bottom: 4px; }
   @media (max-width: 620px) { .tl-row { grid-template-columns: 1fr; gap: 8px; } }
 
+  /* Geschichte media */
+  .gesch-grid { margin-top: 52px; display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(28px, 5vw, 60px); align-items: start; }
+  @media (max-width: 860px) { .gesch-grid { grid-template-columns: 1fr; } }
+  .gesch-grid .timeline { margin-top: 0; }
+  .gesch-media { margin: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); position: sticky; top: 92px; }
+  .gesch-media img { width: 100%; height: 100%; object-fit: cover; display: block; aspect-ratio: 3 / 4; }
+  @media (max-width: 860px) { .gesch-media { position: static; } .gesch-media img { aspect-ratio: 16 / 10; } }
+
   /* Quality split */
   .quality { background: var(--surface); border-block: 1px solid var(--line); }
   .q-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
@@ -295,11 +306,8 @@
   .q-item .qv { font-family: var(--font-mono); font-weight: 600; color: var(--steel); font-size: 0.95rem; white-space: nowrap; padding-top: 2px; min-width: 96px; }
   .q-item .qd h4 { margin: 0 0 3px; font-size: 1.02rem; font-family: var(--font-body); font-weight: 700; }
   .q-item .qd p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
-  .q-visual { aspect-ratio: 4/3; border: 1px solid var(--line); border-radius: var(--radius-lg); background:
-      radial-gradient(circle at 30% 30%, var(--steel-soft), transparent 60%),
-      var(--surface-2);
-    position: relative; overflow: hidden; }
-  .q-visual canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .q-visual { aspect-ratio: 4/3; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; margin: 0; box-shadow: var(--shadow); }
+  .q-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   /* CTA / Contact */
   .contact { }
@@ -481,16 +489,6 @@
   <section id="werkstoffe" style="background:var(--surface); border-block:1px solid var(--line);">
     <div class="wrap">
       <div class="mat-wrap">
-        <div class="mat-chips reveal">
-          <span class="chip">Messing <span class="code">MS58</span></span>
-          <span class="chip">Niro <span class="code">1.4301</span></span>
-          <span class="chip">Kupfer <span class="code">Cu</span></span>
-          <span class="chip">Titan <span class="code">Ti</span></span>
-          <span class="chip">Stahl <span class="code">St</span></span>
-          <span class="chip">Guss <span class="code">GG</span></span>
-          <span class="chip">Aluminium <span class="code">Al</span></span>
-          <span class="chip">Kunststoff <span class="code">POM · PA</span></span>
-        </div>
         <div class="mat-copy reveal">
           <span class="tag brass">02 · Werkstoffe</span>
           <h3>Von Messing bis Titan — wir zerspanen fast alles.</h3>
@@ -498,7 +496,20 @@
             klassischen Messingdreherei bis zu anspruchsvollen Sonderwerkstoffen. Jedes Material
             hat seine Eigenheiten — wir kennen sie und holen das Beste an Maßhaltigkeit und
             Oberfläche heraus.</p>
+          <div class="mat-chips">
+            <span class="chip">Messing <span class="code">MS58</span></span>
+            <span class="chip">Niro <span class="code">1.4301</span></span>
+            <span class="chip">Kupfer <span class="code">Cu</span></span>
+            <span class="chip">Titan <span class="code">Ti</span></span>
+            <span class="chip">Stahl <span class="code">St</span></span>
+            <span class="chip">Guss <span class="code">GG</span></span>
+            <span class="chip">Aluminium <span class="code">Al</span></span>
+            <span class="chip">Kunststoff <span class="code">POM · PA</span></span>
+          </div>
         </div>
+        <figure class="mat-media reveal">
+          <img src="assets/milling.jpg" alt="CNC-Fräsbearbeitung eines Metallteils mit Spänen bei HKW" loading="lazy">
+        </figure>
       </div>
     </div>
   </section>
@@ -513,7 +524,11 @@
           Präzisionsteile-Fertiger geworden. Die Stationen dazwischen:</p>
       </div>
 
-      <div class="timeline reveal">
+      <div class="gesch-grid">
+       <figure class="gesch-media reveal">
+         <img src="assets/shop-portrait.jpg" alt="Fräsmaschine in der Fertigung von HKW in Ramsau" loading="lazy">
+       </figure>
+       <div class="timeline reveal">
         <div class="tl-row">
           <div class="tl-year">1945</div>
           <div class="tl-body">
@@ -562,6 +577,7 @@
             <p>Der Schwerpunkt liegt auf anspruchsvollen Teilen mit engsten Toleranzen im Tausendstelbereich — rund 100.000 Präzisionsteile Monat für Monat.</p>
           </div>
         </div>
+       </div>
       </div>
     </div>
   </section>
@@ -592,9 +608,9 @@
             </div>
           </div>
         </div>
-        <div class="q-visual reveal" aria-hidden="true">
-          <canvas id="gaugeCanvas"></canvas>
-        </div>
+        <figure class="q-visual reveal">
+          <img src="assets/drilling.jpg" alt="Präzisionsbohren mit Kühlschmierstoff bei HKW" loading="lazy">
+        </figure>
       </div>
     </div>
   </section>
