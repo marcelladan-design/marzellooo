@@ -402,8 +402,13 @@
   .l-index a .ln { color: var(--steel); font-weight: 600; }
   .l-index a:hover { color: var(--ink); }
 
-  .leistung { padding-block: clamp(52px,7vw,92px); border-top: 1px solid var(--line); scroll-margin-top: 128px; }
-  .leistung:first-of-type { border-top: none; }
+  .leistung { position: relative; isolation: isolate; background-color: #0b1015; background-size: cover; background-position: center;
+    border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden;
+    padding: clamp(30px,4vw,54px); margin-bottom: 22px; scroll-margin-top: 128px; }
+  .leistung .l-head h2 { color: #fff; }
+  .leistung .l-intro { color: rgba(255,255,255,0.86); }
+  .leistung .tag { color: #7cc4ef; }
+  .leistung .tag::before { background: #7cc4ef; }
   .l-head { max-width: 64ch; }
   .l-head h2 { font-size: clamp(1.9rem,4vw,2.7rem); margin-top: 14px; }
   .l-intro { color: var(--ink-soft); font-size: 1.1rem; margin-top: 16px; }
@@ -478,15 +483,12 @@
 
   <div class="wrap">
 
-    <article class="leistung" id="l1">
+    <article class="leistung" id="l1" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/cnc-fraesen.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">01 · CNC-Fräsen</span>
         <h2>CNC-Fräsen</h2>
         <p class="l-intro">Auf 15 CNC-Fräsmaschinen fertigen wir anspruchsvolle Frästeile — von der einfachen Kontur bis zur 5-Achs-Bearbeitung mit B-Achse und Rundtisch. Maßhaltig, reproduzierbar und auf Wunsch auch in Überlänge.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/cnc-fraesen.jpg" alt="CNC-Bearbeitungszentrum (Fräsen) bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Maschinenpark</span>
@@ -515,15 +517,12 @@
       </div>
     </article>
 
-    <article class="leistung" id="l2">
+    <article class="leistung" id="l2" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/cnc-drehen.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">02 · CNC-Drehen</span>
         <h2>CNC-Drehen</h2>
         <p class="l-intro">36 CNC-Drehmaschinen mit angetriebenen Werkzeugen und Y-Achse, ergänzt durch 8 Automatendrehmaschinen und konventionelle Drehbänke — vom Kleinteil bis zum großen Drehteil in Überlänge.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/cnc-drehen.jpg" alt="CNC-Drehmaschine bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Maschinenpark</span>
@@ -551,15 +550,12 @@
       </div>
     </article>
 
-    <article class="leistung" id="l3">
+    <article class="leistung" id="l3" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/erodieren.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">03 · Erodieren</span>
         <h2>Erodieren</h2>
         <p class="l-intro">Draht- und Senkerodieren für filigrane Konturen, harte Werkstoffe und feinste Details, die sich zerspanend nicht mehr darstellen lassen.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/erodieren.jpg" alt="Drahterodiermaschine Sodick AG600L bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Maschinenpark</span>
@@ -581,15 +577,12 @@
       </div>
     </article>
 
-    <article class="leistung" id="l4">
+    <article class="leistung" id="l4" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/schleifen.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">04 · Schleifen</span>
         <h2>Schleifen</h2>
         <p class="l-intro">Flach-, Rund- und spitzenloses Schleifen für höchste Oberflächengüte und engste Maßtoleranzen.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/schleifen.jpg" alt="Flachschleifmaschine Blohm Planomat bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Maschinenpark</span>
@@ -612,15 +605,12 @@
       </div>
     </article>
 
-    <article class="leistung" id="l5">
+    <article class="leistung" id="l5" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/gewinderollen.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">05 · Gewinderollen</span>
         <h2>Gewinderollen</h2>
         <p class="l-intro">Gewinde rollen statt schneiden — für höhere Festigkeit und beste Oberflächen. Dazu Passverzahnungen, Verdichten und Glattwalzen.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/gewinderollen.jpg" alt="Gerollte Gewindeteile bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Maschinenpark</span>
@@ -643,15 +633,12 @@
       </div>
     </article>
 
-    <article class="leistung" id="l6">
+    <article class="leistung" id="l6" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/saegen.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">06 · Sägen</span>
         <h2>Sägen</h2>
         <p class="l-intro">Zuschnitt von Rund- und Vierkantmaterial bis in große Abmessungen — der erste, maßhaltige Schritt jeder Fertigung.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/saegen.jpg" alt="Sägen von Rundmaterial bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Maschinenpark</span>
@@ -672,15 +659,12 @@
       </div>
     </article>
 
-    <article class="leistung" id="l7">
+    <article class="leistung" id="l7" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/galvanik.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">07 · Galvanik &amp; Oberflächen</span>
         <h2>Galvanik &amp; Oberflächen</h2>
         <p class="l-intro">Sämtliche Oberflächenveredelung im eigenen Haus — von Eloxal über Pulverbeschichtung bis Galvanik und Laserbeschriftung. Das spart Wege und Zeit.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/galvanik.jpg" alt="Galvanik- und Eloxal-Anlage bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Verfahren im Haus</span>
@@ -708,15 +692,12 @@
       </div>
     </article>
 
-    <article class="leistung" id="l8">
+    <article class="leistung" id="l8" style="background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.88)), url(&quot;assets/spritzguss.jpg&quot;);">
       <div class="l-head reveal">
         <span class="tag">08 · Spritzguss</span>
         <h2>Spritzguss</h2>
         <p class="l-intro">Kunststoff-Spritzguss — die Wurzel unseres Betriebs seit 1945 — ergänzt die Metallzerspanung um Kunststoffkomponenten.</p>
       </div>
-      <figure class="l-media reveal">
-        <img src="assets/spritzguss.jpg" alt="Spritzgussmaschine ENGEL bei HKW" loading="lazy">
-      </figure>
       <div class="panels reveal">
         <div class="panel">
           <span class="panel-k">Maschinenpark</span>
