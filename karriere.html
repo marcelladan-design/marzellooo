@@ -359,6 +359,11 @@
   .nav-links a[aria-current="page"] { color: var(--ink); }
   .backlink { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-soft); display: inline-flex; gap: 8px; align-items: center; }
   .backlink:hover { color: var(--steel); }
+  #stellen .sec-head h2 { color: #fff; }
+  #stellen .sec-head p { color: rgba(255,255,255,0.82); }
+  #stellen .tag.brass { color: #e6b366; }
+  #stellen .tag.brass::before { background: #e6b366; }
+  #stellen .jobs-note { color: rgba(255,255,255,0.78); }
 </style>
 
 <header>
@@ -451,7 +456,7 @@
   </section>
 
   <!-- OFFENE STELLEN -->
-  <section id="stellen" style="background:var(--surface); border-block:1px solid var(--line);">
+  <section id="stellen" style="background-image: linear-gradient(rgba(8,12,17,0.82), rgba(8,12,17,0.86)), url(&quot;assets/stellen.jpg&quot;); background-size: cover; background-position: center; border-block:1px solid rgba(255,255,255,0.1);">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="tag brass">Offene Stellen</span>
