@@ -346,12 +346,16 @@
 
 <style>
   .khero { padding-block: clamp(64px,10vw,120px) clamp(40px,6vw,72px); border-bottom: 1px solid var(--line);
-    background: radial-gradient(130% 110% at 82% -10%, var(--steel-soft), transparent 58%); }
-  .khero h1 { font-size: clamp(2.2rem,5.6vw,3.9rem); margin-top: 16px; max-width: 18ch; }
-  .khero .lede { font-size: clamp(1.05rem,1.6vw,1.25rem); color: var(--ink-soft); max-width: 54ch; margin-top: 20px; }
+    background-image: linear-gradient(rgba(8,12,17,0.80), rgba(8,12,17,0.84)), url('assets/karriere.jpg');
+    background-size: cover; background-position: center; position: relative; isolation: isolate; }
+  .khero .backlink { color: rgba(255,255,255,0.78); }
+  .khero .tag.brass { color: #e6b366; }
+  .khero .tag.brass::before { background: #e6b366; }
+  .khero h1 { font-size: clamp(2.2rem,5.6vw,3.9rem); margin-top: 16px; max-width: 18ch; color: #fff; }
+  .khero .lede { font-size: clamp(1.05rem,1.6vw,1.25rem); color: rgba(255,255,255,0.85); max-width: 54ch; margin-top: 20px; }
   .kstats { display: flex; flex-wrap: wrap; gap: 16px 44px; margin-top: 36px; }
-  .kstat .n { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; letter-spacing: -0.02em; color: var(--steel); font-variant-numeric: tabular-nums; line-height: 1; }
-  .kstat .l { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); margin-top: 8px; }
+  .kstat .n { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; letter-spacing: -0.02em; color: #7cc4ef; font-variant-numeric: tabular-nums; line-height: 1; }
+  .kstat .l { font-family: var(--font-mono); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: rgba(255,255,255,0.72); margin-top: 8px; }
   .nav-links a[aria-current="page"] { color: var(--ink); }
   .backlink { font-family: var(--font-mono); font-size: .8rem; color: var(--ink-soft); display: inline-flex; gap: 8px; align-items: center; }
   .backlink:hover { color: var(--steel); }
@@ -383,7 +387,7 @@
       <a class="backlink" href="index.html">← Zur Startseite</a>
       <div style="margin-top:22px;">
         <span class="tag brass">Karriere bei HKW · Ramsau (NÖ)</span>
-        <h1>Zerspanung ist bei uns Handwerk <span style="color:var(--steel);">und Hightech</span>.</h1>
+        <h1>Zerspanung ist bei uns Handwerk <span style="color:#7cc4ef;">und Hightech</span>.</h1>
         <p class="lede">Seit 1945 fertigen wir Präzisionsteile im Tausendstelbereich. Wenn du gern
           exakt arbeitest und etwas Bleibendes schaffen willst, findest du bei uns einen sicheren
           Platz — vom ersten Lehrjahr bis zum erfahrenen Facharbeiter.</p>
